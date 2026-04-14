@@ -1,10 +1,10 @@
 # 📘 **Physics of Intelligence — 定義書**  
 
 **Author**: Fumio Miyata  
-
 **Date**: April 14, 2026（2026-04-14）  
-
+**DOI**: [https://doi.org/10.5281/zenodo.19564472](https://doi.org/10.5281/zenodo.19564472)  
 **Repository**: [https://github.com/aikenkyu001/CDU_structure](https://github.com/aikenkyu001/CDU_structure)  
+  
 
 **目的：Physics of Intelligence の世界初の正式定義の提示**
 

@@ -2,6 +2,7 @@
 
 **Author**: Fumio Miyata  
 **Date**: April 14, 2026 (2026-04-14)  
+**DOI**: [https://doi.org/10.5281/zenodo.19564472](https://doi.org/10.5281/zenodo.19564472)  
 **Repository**: [https://github.com/aikenkyu001/CDU_structure](https://github.com/aikenkyu001/CDU_structure)  
 
 **Purpose: To present the world’s first formal definition of the Physics of Intelligence.**
