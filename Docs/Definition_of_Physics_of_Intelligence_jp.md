@@ -16,7 +16,7 @@
 本定義は、電子・アナログ・生物・光学・シリコンに跨る  
 **CDU（Cause–Divergence–Unification）構造の普遍性**  
 および  
-**PKGF（Physical Knowledge Geometry Framework）**  
+**PKGF（Parallel Key Geometric Flow：並行鍵幾何流）**  
 の数学的基礎に基づく。
 
 ---

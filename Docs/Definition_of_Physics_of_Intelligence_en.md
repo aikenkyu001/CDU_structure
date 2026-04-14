@@ -15,7 +15,7 @@ This document provides the **world’s first formal definition of the Physics of
 The definition is grounded in the cross‑media universality of the  
 **CDU (Cause–Divergence–Unification) structure**,  
 and in the mathematical foundations of the  
-**PKGF (Physical Knowledge Geometry Framework)**,  
+**PKGF (Parallel Key Geometric Flow)**,  
 spanning electronic, analog, biological, optical, and silicon-based systems.
 
 ---
