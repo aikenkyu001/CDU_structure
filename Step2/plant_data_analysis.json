@@ -1,0 +1,46 @@
+{
+    "data_source": "AAA-2003/Electrophysiology-of-Mimosa-pudica-L",
+    "critical_charge_uC": 9.0,
+    "analysis_summary": [
+        {
+            "Charge (uC)": 9e-05,
+            "Trials": 2,
+            "Success Rate": 0.0
+        },
+        {
+            "Charge (uC)": 0.009,
+            "Trials": 6,
+            "Success Rate": 0.0
+        },
+        {
+            "Charge (uC)": 0.09,
+            "Trials": 5,
+            "Success Rate": 0.0
+        },
+        {
+            "Charge (uC)": 0.9,
+            "Trials": 10,
+            "Success Rate": 0.4
+        },
+        {
+            "Charge (uC)": 9.0,
+            "Trials": 6,
+            "Success Rate": 0.5
+        },
+        {
+            "Charge (uC)": 423.0,
+            "Trials": 2,
+            "Success Rate": 0.5
+        },
+        {
+            "Charge (uC)": 900.0,
+            "Trials": 1,
+            "Success Rate": 0.0
+        },
+        {
+            "Charge (uC)": 4230.0,
+            "Trials": 4,
+            "Success Rate": 0.75
+        }
+    ]
+}

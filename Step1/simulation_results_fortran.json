@@ -1,0 +1,12 @@
+{
+    "success_case": {
+        "interval": 2.00,
+        "success": false,
+        "max_voltage":  0.0077
+    },
+    "failed_case": {
+        "interval": 5.00,
+        "success": false,
+        "max_voltage":  0.0060
+    }
+}

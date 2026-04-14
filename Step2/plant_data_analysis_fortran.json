@@ -1,0 +1,40 @@
+{
+    "critical_charge_uC":  9.0000,
+    "analysis_summary": [
+        {
+            "Charge (uC)": **********,
+            "Trials":    1,
+            "Success Rate":  1.0000
+        },
+        {
+            "Charge (uC)":   9.000000,
+            "Trials":    6,
+            "Success Rate":  0.5000
+        },
+        {
+            "Charge (uC)":   0.000090,
+            "Trials":    2,
+            "Success Rate":  0.0000
+        },
+        {
+            "Charge (uC)":   0.009000,
+            "Trials":    6,
+            "Success Rate":  0.0000
+        },
+        {
+            "Charge (uC)":   0.900000,
+            "Trials":   10,
+            "Success Rate":  0.4000
+        },
+        {
+            "Charge (uC)":   0.090000,
+            "Trials":    5,
+            "Success Rate":  0.0000
+        },
+        {
+            "Charge (uC)": 423.000000,
+            "Trials":    2,
+            "Success Rate":  0.5000
+        }
+    ]
+}

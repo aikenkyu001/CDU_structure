@@ -1,0 +1,10 @@
+{
+    "single_stimulus": {
+        "action_triggered": false,
+        "max_potential":  0.0500
+    },
+    "double_stimuli": {
+        "action_triggered": false,
+        "max_potential":  0.0747
+    }
+}
