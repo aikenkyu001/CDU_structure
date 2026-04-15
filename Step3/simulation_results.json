@@ -1,6 +1,7 @@
 {
-    "initial_rank": 4.882698302498083,
-    "final_rank": 2.452749349790932,
-    "max_rank": 4.882698302498083,
-    "rank_jump": 0.0
+    "initial_rank": 27.449147562306614,
+    "final_rank": 5.015904187184451,
+    "max_rank": 27.449147562306614,
+    "rank_jump_detected": false,
+    "final_stability": -0.034584848162372527
 }
