@@ -1,4 +1,5 @@
-# **Definition of the Physics of Intelligence — Official Foundational Document**  
+# Physics of Intelligence — Volume 1: Axioms and Universal Structure
+
 **Author:** Fumio Miyata  
 **Date:** 2026  
 **Version:** 1.0.2 (Aligned with Japanese Edition)  

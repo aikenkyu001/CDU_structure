@@ -1,4 +1,5 @@
-# **Physics of Intelligence — 定義と公理体系**  
+# Physics of Intelligence — 公理と普遍構造（Volume 1: Axioms and Universal Structure）  
+
 **Author: Fumio Miyata**  
 **Date: 2026**  
 **Version: 1.0.2（構造整備・公理体系明示版）**  
