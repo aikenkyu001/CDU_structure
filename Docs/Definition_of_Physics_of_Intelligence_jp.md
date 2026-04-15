@@ -1,7 +1,8 @@
 # **Physics of Intelligence — 定義と公理体系**  
 **Author: Fumio Miyata**  
 **Date: 2026**  
-**Version: 1.1（構造整備・公理体系明示版）**
+**Version: 1.0.2（構造整備・公理体系明示版）**  
+**DOI:** [https://doi.org/10.5281/zenodo.19583347](https://doi.org/10.5281/zenodo.19583347)  
 
 ---
 

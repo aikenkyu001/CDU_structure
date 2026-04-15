@@ -1,6 +1,6 @@
 # Physical Implementation of Intelligence via PKGF: The C-D-U Structure Across Electronics, Biology, Optics, and Neural Engines
 
-**DOI**: [https://doi.org/10.5281/zenodo.19565355](https://doi.org/10.5281/zenodo.19565355)  
+**DOI**: [https://doi.org/10.5281/zenodo.19583347](https://doi.org/10.5281/zenodo.19583347)  
 
 This repository serves as the central hub for the research project "Physical Implementation of Intelligence via Parallel Key Geometric Flow (PKGF) Theory."
  It aims to implement and validate the **C-D-U model**—the fundamental structure of intelligence—across diverse physical media: electronic circuits, biological systems (plants), optical systems, and silicon AI engines (NPUs).

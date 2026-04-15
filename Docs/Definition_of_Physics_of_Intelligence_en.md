@@ -1,7 +1,8 @@
 # **Definition of the Physics of Intelligence — Official Foundational Document**  
 **Author:** Fumio Miyata  
 **Date:** 2026  
-**Version:** 1.1 (Aligned with Japanese Edition)
+**Version:** 1.0.2 (Aligned with Japanese Edition)  
+**DOI:** [https://doi.org/10.5281/zenodo.19583347](https://doi.org/10.5281/zenodo.19583347)  
 
 ---
 
