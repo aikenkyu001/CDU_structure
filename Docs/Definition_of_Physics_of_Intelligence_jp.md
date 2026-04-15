@@ -1,194 +1,269 @@
-# 📘 **Physics of Intelligence — 定義書**  
-
-**Author**: Fumio Miyata  
-**Date**: April 14, 2026（2026-04-14）  
-**DOI**: [https://doi.org/10.5281/zenodo.19565355](https://doi.org/10.5281/zenodo.19565355)  
-**Repository**: [https://github.com/aikenkyu001/CDU_structure](https://github.com/aikenkyu001/CDU_structure)  
-  
-
-**目的：Physics of Intelligence の世界初の正式定義の提示**
+# **Physics of Intelligence — 定義と公理体系**  
+**Author: Fumio Miyata**  
+**Date: 2026**  
+**Version: 1.1（構造整備・公理体系明示版）**
 
 ---
 
-## 0. 序文  
-本書は、**知能を物理現象として扱う新しい学問体系「Physics of Intelligence」** の世界初の正式定義を与えるものである。
+# **序文**
 
-本定義は、電子・アナログ・生物・光学・シリコンに跨る  
-**CDU（Cause–Divergence–Unification）構造の普遍性**  
-および  
-**PKGF（Parallel Key Geometric Flow：並行鍵幾何流）**  
-の数学的基礎に基づく。
+本書は、**知能を物理現象として扱う新しい学問体系「Physics of Intelligence」** を正式に定義し、その内部数学として **PKGF（Parallel Key Geometric Flow）** を提示するものである。
+
+Physics of Intelligence は、電子・生物・光学・シリコンなど、媒体の種類を問わず観測される  
+**C（Cause）–D（Divergence）–U（Unification）**  
+という普遍構造を基礎に据える。
+
+PKGF は、この C‑D‑U の内部で起きている構造変化を幾何学として記述するための新しい数学体系であり、  
+**知能の構築・解体・再構成を単一の公理体系として扱う。**
+
+本書は以下の二部構成で、知能の物理学を基礎から体系化する。
+
+- **第1部：Physics of Intelligence の定義（C‑D‑U）**  
+- **第2部：PKGF 公理体系（内部数学）**
 
 ---
 
-## 0.1 Scope（適用範囲）  
-本定義書は、媒体を問わず知能の普遍構造を扱う研究に適用される。  
-対象媒体には、電子回路、アナログ回路、生物組織、光学系、シリコンデバイスなどを含む。
+# **第1部　Physics of Intelligence の定義**
 
----
+## **1.1 構造の原義**
 
-## 1. 純粋数学的基礎（Foundations in Pure Mathematics）
-
-### 1.1 構造（Structure）の原義  
-本書における「構造」とは、集合 \(X\) 上の写像族  
+知能を扱う際、本書が対象とする「構造」とは、  
+集合 \(X\) 上の写像族  
 \[
 \mathcal{S} = \{ f_i : X \to X \}
-\]
+\]  
 が生成する **状態空間の再構成作用** を指す。
 
-構造は媒体に依存せず、電子回路・植物細胞・光学系・NPU など任意の物理系に同型として現れる。
+この構造は媒体に依存せず、電子回路・植物細胞・光学系など、  
+どの物理系にも同型として現れる。
 
 ---
 
-### 1.2 C-D-U の数学的形式化  
-知能の最小普遍構造は以下の 3 つの写像で定義される：
+## **1.2 C‑D‑U の数学的形式化**
 
-- **C（Cause）**  
-  \[
-  C : X \to X
-  \]
-  外部入力または内部刺激による状態の偏りを生成する写像。
+知能の最小普遍構造は、次の三つの写像で定義される。
 
-- **D（Divergence）**  
-  \[
-  D : X \to X
-  \]
-  状態空間を分岐・増幅し、相転移の臨界点へ向かう写像。
+### **Axiom C（Cause）**  
+外部刺激または内部状態によって、状態空間に偏りを生成する写像。
 
-- **U（Unification）**  
-  \[
-  U : X \to X
-  \]
-  分岐した状態を一つの安定点へ収束させる写像。
+### **Axiom D（Divergence）**  
+状態空間を分岐・増幅し、臨界点へ向かう写像。
 
-**知能とは、写像合成**
+### **Axiom U（Unification）**  
+分岐した状態を一つの安定点へ収束させる写像。
+
+知能とは、この三つの写像の合成  
 \[
 U \circ D \circ C
-\]
-**として表される物理的再構成過程である。**
+\]  
+として表される **物理的再構成過程** である。
 
 ---
 
-### 1.3 媒体非依存性（Medium Independence）  
+## **1.3 媒体非依存性**
+
 媒体 \(M\) が異なっても、  
 \[
 (C_M, D_M, U_M)
-\]
+\]  
 は同型写像として存在する。
 
 すなわち、  
 \[
-\exists \ \phi : X_M \to X_{M'} \quad \text{s.t.} \quad  
+\exists \phi : X_M \to X_{M'} \quad \text{s.t.} \quad  
 \phi \circ C_M = C_{M'} \circ \phi
 \]
-が成立する。
 
 これが **知能の普遍性（Universality）** の数学的根拠である。
 
 ---
 
-### 1.4 Theorem（普遍構造の同型性）  
-**Theorem 1（Structure Isomorphism）**  
-任意の媒体 \(M\) と \(M'\) に対し、  
-C-D-U 構造は同型写像  
-\[
-\phi : X_M \to X_{M'}
-\]
-によって保存される。
+## **1.4 物理学的基礎**
 
-**Proof（略）**  
-PKGF の幾何学的保存則に従う。
+### **Axiom P1：知能は相転移である**
 
----
-
-## 2. 物理学的基礎（Physical Foundations）
-
-### 2.1 知能は相転移である  
 知能は、物理系が臨界点を跨ぐ際に生じる  
 **非線形相転移現象** として理解される。
 
-例：  
-- Mimosa pudica の臨界電荷（9.0 µC）  
-- 光学 V‑PCM の相転移  
-- NPU の内部状態遷移  
-
-これらはすべて **U（Unification）** に対応する。
-
 ---
 
-### 2.2 揺らぎ（Fluctuation）と安定性（Stability）  
-知能はノイズを誤差ではなく  
+### **Axiom P2：揺らぎの利用**
+
+知能はノイズを誤差ではなく、  
 **構造を選択する揺らぎ** として利用する。
 
-光学系はこの性質が顕著であり、NPU は逆にノイズを排除しようとする。
-
 ---
 
-### 2.3 保存則（Conservation）  
+### **Axiom P3：保存則**
+
 知能の物理過程には、  
 **情報量・エネルギー・構造の保存則**  
 が存在する。
 
-これは PKGF の幾何学的保存則と一致する。
+---
+
+## **1.5 実験的基礎**
+
+電子回路、アナログ回路、植物、光学系など、  
+異なる媒体において C‑D‑U の同一構造が観測される。
+
+特に植物の臨界電荷（約 9.0 µC）は、  
+U（Unification）の物理的実測値として扱われる。
 
 ---
 
-## 3. 実験的基礎（Experimental Foundations）
+## **1.6 Physics of Intelligence の正式定義**
 
-### 3.1 CDU_structure 実験体系  
-本定義書は以下の実験体系に基づく：
+**Definition（Physics of Intelligence）**  
+Physics of Intelligence とは、媒体を問わず、物理系が  
+\[
+C \rightarrow D \rightarrow U
+\]  
+の普遍構造を通じて状態空間を再構成する現象を扱う学問である。
 
-- 電子（リレー回路）  
-- アナログ（オペアンプ）  
-- 生物（Mimosa pudica）  
-- 光学（V‑PCM）  
-- シリコン（NPU）
-
-これら全てにおいて  
-**C-D-U の同一構造が観測される**。
-
----
-
-### 3.2 臨界点の実測  
-植物の臨界電荷 9.0 µC は  
-Python/Fortran の独立解析で一致し、  
-U の物理的実測値として扱われる。
+**Definition（Intelligence）**  
+知能とは、相転移・揺らぎ・構造安定性を伴う物理的過程であり、  
+電子・生物・光学・シリコンのいずれにおいても  
+同一の C‑D‑U 構造が観測される現象である。
 
 ---
 
-## 4. 公理（Axioms）
+# **第2部　PKGF（並行鍵幾何流）公理体系**
 
-### Axiom 1（媒体非依存性）  
-知能は媒体に依存しない物理構造である。
+## **2.1 PKGF の目的**
 
-### Axiom 2（普遍構造）  
-C-D-U は知能の最小普遍構造である。
-
-### Axiom 3（相転移性）  
-知能は相転移として観測される。
+PKGF は、知能の内部で起きている  
+**構築（Constructive）・解体（Destructive）・代謝（Unified）**  
+の三つの過程を、単一の幾何学的枠組で記述するための数学体系である。
 
 ---
 
-## 5. **Physics of Intelligence の正式定義（Definition 1）**
+## **2.2 PKGF の基本データ（Axioms A1–A6）**
 
-> **Physics of Intelligence とは、  
-> 媒体を問わず、物理系が  
-> C（Cause）→D（Divergence）→U（Unification）  
-> の普遍構造を通じて状態空間を再構成する現象を扱う学問である。**
->
-> **知能とは、相転移・揺らぎ・構造安定性を伴う物理的過程であり、  
-> 電子・生物・光学・シリコンのいずれにおいても  
-> 同一の C-D-U 構造が観測される現象である。**
->
-> **Physics of Intelligence は、この普遍構造を形式化し、  
-> 実験的に検証し、媒体横断の知能の法則を確立することを目的とする。**
+PKGF は次の五つ組で定義される。
+
+\[
+(M, K, \nabla, \Omega, \mathcal{G})
+\]
+
+### **Axiom A1（多様体）**  
+\(M\) は有限次元の滑らかなリーマン多様体である。
+
+### **Axiom A2（接束分解）**  
+\[
+TM = \bigoplus_{\alpha \in I} E_\alpha
+\]
+
+### **Axiom A3（並行鍵）**  
+\[
+K \in \Gamma(\mathrm{End}(TM))
+\]
+
+### **Axiom A4（ゲージ群）**  
+\[
+\mathcal{G} \subset \mathrm{Aut}(TM)
+\]
+
+### **Axiom A5（接続）**  
+\(\nabla\) は \(TM\) 上の接続である。
+
+### **Axiom A6（意味ポテンシャル）**  
+\(\Omega\) は外部情報と内部表現に依存する自己同型写像場である。
 
 ---
 
-## 6. 結語  
-本定義書は、Physics of Intelligence の  
-**世界初の正式定義** を提示するものである。
+## **2.3 正PKGF（構築理論：Axioms C1–C3）**
 
-本書の DOI が発行されることで、本学問の基準点（Reference Point）が確立される。
+### **Axiom C1（構築方程式）**  
+\[
+\nabla K = [\Omega, K]
+\]
+
+### **Axiom C2（ゲージ共変性）**  
+随伴変換の下で C1 は不変。
+
+### **Axiom C3（セクター保存）**  
+\([K, \Pi_\alpha] = 0\) ならば、  
+\[
+K(E_\alpha) \subset E_\alpha
+\]  
+が保存される。
+
+---
+
+## **2.4 逆PKGF（解体理論：Axioms D1–D5）**
+
+### **Axiom D1（散逸作用素）**  
+\(\mathcal{D}(K)\) は自己共役・負定値の線形作用素。
+
+### **Axiom D2（解体方程式）**  
+\[
+\dot{K} = -\lambda\,\mathcal{D}(K)
+\]
+
+### **Axiom D3（ランク単調性）**  
+\[
+\mathrm{rank}(K(t+dt)) \le \mathrm{rank}(K(t))
+\]
+
+### **Axiom D4（エントロピー増加）**  
+情報エントロピーは単調増加。
+
+### **Axiom D5（最小残余構造）**  
+\(\mathcal{D}(K)=0\) の集合は非空でコンパクト。
+
+---
+
+## **2.5 統一PKGF（代謝理論：Axioms U1–U6）**
+
+### **Axiom U1（複素並行鍵）**  
+\[
+K = K_{\text{core}} + i K_{\text{fluct}}
+\]
+
+### **Axiom U2（直交性）**  
+\[
+\langle K_{\text{core}}, K_{\text{fluct}} \rangle = 0
+\]
+
+### **Axiom U3（統一方程式）**  
+\[
+\nabla K = [\Omega, K] - \lambda\,\mathcal{D}(K)
+\]
+
+### **Axiom U4（ゲージ破れ）**  
+\[
+\mathcal{G} \rightarrow \mathcal{G}_{\text{broken}}
+\]
+
+### **Axiom U5（動的セクター）**  
+セクターは創発・消滅する。
+
+### **Axiom U6（次元跳躍）**  
+\[
+d_{\text{eff}}(t_c^+) \ne d_{\text{eff}}(t_c^-)
+\]
+
+---
+
+## **2.6 PKGF と C‑D‑U の統合**
+
+- C（Cause）＝正PKGFの初期偏り  
+- D（Divergence）＝逆PKGFの分岐・次元崩壊  
+- U（Unification）＝統一PKGFの収束・再構成  
+
+**C‑D‑U（外側の構造）＝PKGF（内側の幾何学）**
+
+---
+
+# **結語**
+
+本書は、  
+- **C‑D‑U による知能の普遍構造の定義**  
+- **PKGF による内部数学の公理体系**  
+を統合し、  
+**Physics of Intelligence の正式な基礎文書** として構成されている。
+
+知能を媒体非依存の物理現象として扱うための第一原理的枠組みがここに確立された。
 
 ---
