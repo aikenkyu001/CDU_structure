@@ -1,0 +1,11 @@
+ Starting Automated Parameter Sweep for Step 3 (Fortran/Self-contained)...
+Blur:  0.5, Noise:  0.01 -> Rank Jump: *********
+Blur:  0.5, Noise:  0.05 -> Rank Jump: *********
+Blur:  0.5, Noise:  0.15 -> Rank Jump: *********
+Blur:  1.5, Noise:  0.01 -> Rank Jump: *********
+Blur:  1.5, Noise:  0.05 -> Rank Jump: *********
+Blur:  1.5, Noise:  0.15 -> Rank Jump: *********
+Blur:  3.0, Noise:  0.01 -> Rank Jump: *********
+Blur:  3.0, Noise:  0.05 -> Rank Jump: *********
+Blur:  3.0, Noise:  0.15 -> Rank Jump: *********
+ Sweep complete. Results saved to Step3/simulation_results_fortran.json

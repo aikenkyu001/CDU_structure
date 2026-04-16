@@ -1,0 +1,17 @@
+Starting Step 3 Main Experiment: PKGF Digital Simulation
+Step   | Eff. Rank    | Action
+----------------------------------------
+0      | 2.0226       | 
+1      | 1.1827       | !! RANK JUMP !!
+20     | 1.0001       | 
+40     | 1.0001       | 
+60     | 1.0004       | 
+80     | 1.0001       | 
+100    | 1.0002       | 
+120    | 1.0007       | 
+140    | 1.0001       | 
+160    | 1.0005       | 
+180    | 1.0006       | 
+----------------------------------------
+Experiment complete. Final d_eff: 1.0000
+Results saved to Step3/main_experiment_results.json and snapshots.

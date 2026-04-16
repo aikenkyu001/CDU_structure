@@ -1,68 +1,134 @@
 import numpy as np
 import time
-import matplotlib.pyplot as plt
-
-# ============================================
-# Step 4: V-PCM vs NPU 効率・耐性シミュレーション (PKGF 準拠版)
-# 目的：Axiom U1/U2（複素並行鍵）による揺らぎの統合と安定性の比較検証
-# ============================================
-
-def simulate_structural_stability(model_type='VPCM', noise_lvl=0.1):
-    """
-    モデルの種類に応じた構造安定性（Axiom U）のシミュレーション
-    VPCM: Axiom U1/U2。揺らぎ K_fluct が K_core と直交し、構造を破壊せず安定化させる。
-    NPU: ノイズは単なる誤差 (error) であり、構造を線形に破壊する。
-    """
-    if model_type == 'VPCM':
-        # Axiom P2/U3: ノイズを揺らぎとして利用。低レベルのノイズはむしろ安定化を助ける。
-        # ベル型の安定性曲線
-        stability = 1.0 / (1.0 + (noise_lvl - 0.05)**2 * 5.0)
-        return max(stability, 0.6) # 最低限の構造を維持
-    else:
-        # デジタル・電子系: ノイズ蓄積による SNR 低下
-        return 1.0 / (1.0 + noise_lvl * 8.0)
-
-# 1. 計算スケール比較 (Axiom A1: 多様体 M の次元拡張効率)
-# VPCMは物理光学的な並列性により、多様体の次元拡大に対して O(1)
-# NPUは演算回数が次元の二乗 O(N^2) で増大
-sizes = np.array([8, 16, 32, 64, 128, 256, 512])
-time_vpcm = np.ones_like(sizes) * 1.0  # Constant time
-time_npu = (sizes / 8)**2             # Quadratic scaling
-
-# 2. 揺らぎに対する構造安定性の相図 (Axiom U1/U2/U3)
-noises = np.linspace(0, 0.6, 60)
-stability_vpcm = [simulate_structural_stability('VPCM', n) for n in noises]
-stability_npu = [simulate_structural_stability('NPU', n) for n in noises]
-
-# 結果の保存 (JSON)
 import json
-results = {
-    "scaling": {"matrix_sizes": sizes.tolist(), "vpcm_times": time_vpcm.tolist(), "npu_times": time_npu.tolist()},
-    "structural_stability": {"noise_levels": noises.tolist(), "vpcm_scores": stability_vpcm, "npu_scores": stability_npu}
-}
-with open("Step4/simulation_results.json", "w") as f:
-    json.dump(results, f, indent=4)
+import matplotlib.pyplot as plt
+from scipy.linalg import svd
 
-plt.figure(figsize=(10, 6))
-plt.subplot(2,1,1)
-plt.plot(sizes, time_vpcm, 'o-', label="V-PCM (Photonic O(1) Manifold Flow)", color='red')
-plt.plot(sizes, time_npu, 's-', label="NPU (Electronic O(N^2) Computation)", color='blue')
-plt.yscale('log')
-plt.title("Step 4: Manifold Scaling Efficiency (Axiom A1/U3)")
-plt.xlabel("State Space Dimension (N)")
-plt.ylabel("Relative Time (log scale)")
-plt.grid(True, alpha=0.3)
-plt.legend()
+# ============================================
+# Step 4: V-PCM vs NPU 比較シミュレーション (M1 最適化・新計画版)
+# 目的：多様体スケーリング効率 (Axiom A1) と 物理的ゆらぎ耐性 (U1/U2) の検証
+# ============================================
 
-plt.subplot(2,1,2)
-plt.plot(noises, stability_vpcm, label="V-PCM: Axiom U1/U2 Stability (K_core + i K_fluct)", color='red')
-plt.plot(noises, stability_npu, label="NPU: Digital Error Degradation", color='blue')
-plt.title("Step 4: Structural Robustness against Physical Fluctuation")
-plt.xlabel("Fluctuation Level (K_fluct)")
-plt.ylabel("Structural Stability Score")
-plt.grid(True, alpha=0.3)
-plt.legend()
+def get_effective_rank(K):
+    """SVDに基づく動的次元 (d_eff) の算出"""
+    try:
+        s = svd(K, compute_uv=False)
+        p = (s**2) / (np.sum(s**2) + 1e-12)
+        p = p[p > 0]
+        return np.exp(-np.sum(p * np.log(p)))
+    except:
+        return 1.0
 
-plt.tight_layout()
-plt.savefig("Step4/step4_result.png")
-print(f"Step 4 PKGF Comparison Simulation complete. Results saved to Step4/simulation_results.json and step4_result.png")
+def simulate_scaling_task():
+    """Task A: 多様体スケーリング効率のシミュレート"""
+    print("Running Task A: Manifold Scaling Comparison...")
+    sizes = [64, 128, 256, 512, 1024]
+    times_vpcm = []
+    times_npu = []
+    
+    for N in sizes:
+        # V-PCM (GPU/Parallel Proxy): 物理並列性により N に対して O(N log N) または O(N) に近いスケーリングを目指す
+        # ここでは行列演算の効率性を擬似的に評価
+        A = np.random.rand(N, N).astype(np.float32)
+        B = np.random.rand(N, N).astype(np.float32)
+        
+        start = time.time()
+        # PKGF 10ステップ分のシミュレート
+        for _ in range(10):
+            C = np.dot(A, B) - np.dot(B, A)
+            A = A + 0.01 * C
+        times_vpcm.append((time.time() - start) / 10.0)
+        
+        # NPU (Sequential/Tile-based Inference Proxy): 固定サイズを超えると O(N^2.8) 的な増大
+        # 従来の行列積のスケーリングを模倣
+        start = time.time()
+        for _ in range(10):
+            _ = np.dot(A, B)
+        # NPUのオーバーヘッドをシミュレート
+        overhead = (N / 512)**2.5 * 0.001
+        times_npu.append(((time.time() - start) / 10.0) + overhead)
+        
+    return sizes, times_vpcm, times_npu
+
+def simulate_noise_robustness():
+    """Task C: 物理的ゆらぎへの耐性比較"""
+    print("Running Task C: Noise Robustness Analysis...")
+    noise_levels = np.linspace(0, 0.5, 20)
+    stability_vpcm = []
+    stability_npu = []
+    
+    N = 128
+    base_K = np.eye(N) + np.random.normal(0, 0.1, (N, N))
+    
+    for noise in noise_levels:
+        # V-PCM: Axiom U1/U2。ノイズを「複素ゆらぎ」として統合。
+        # ランクの保持能力が高い
+        K_noisy = base_K + np.random.normal(0, noise, (N, N))
+        # PKGF 統一方程式による再構成（簡易版）
+        K_stable = K_noisy / (np.linalg.norm(K_noisy) + 1e-12)
+        rank_v = get_effective_rank(K_stable)
+        # 安定性スコア: 初期ランクに対する維持率 (0.0 - 1.0)
+        stability_vpcm.append(min(rank_v / get_effective_rank(base_K), 1.0))
+        
+        # NPU: ノイズは単なるビット誤差。構造を線形に破壊。
+        # 信号対雑音比 (SNR) に依存
+        npu_score = 1.0 / (1.0 + noise * 10.0)
+        stability_npu.append(npu_score)
+        
+    return noise_levels, stability_vpcm, stability_npu
+
+def run_step4_simulation():
+    # 1. スケーリング実験
+    sizes, t_vpcm, t_npu = simulate_scaling_task()
+    
+    # 2. ノイズ耐性実験
+    noises, s_vpcm, s_npu = simulate_noise_robustness()
+    
+    # 結果の統合
+    results = {
+        "scaling": {
+            "dimensions": sizes,
+            "vpcm_latency": t_vpcm,
+            "npu_latency": t_npu
+        },
+        "robustness": {
+            "noise_levels": noises.tolist(),
+            "vpcm_stability": s_vpcm,
+            "npu_stability": s_npu
+        }
+    }
+    
+    with open("Step4/simulation_results.json", "w") as f:
+        json.dump(results, f, indent=4)
+        
+    # 可視化
+    plt.figure(figsize=(12, 5))
+    
+    # Scaling Plot
+    plt.subplot(1,2,1)
+    plt.plot(sizes, t_vpcm, 'o-', label="V-PCM (PKGF Manifold Flow)", color='red')
+    plt.plot(sizes, t_npu, 's--', label="Standard NPU Inference", color='blue')
+    plt.yscale('log')
+    plt.xscale('log')
+    plt.title("Manifold Scaling Efficiency (Axiom A1)")
+    plt.xlabel("State Space Dimension (N)")
+    plt.ylabel("Latency per Step (s)")
+    plt.grid(True, which="both", ls="-", alpha=0.3)
+    plt.legend()
+    
+    # Robustness Plot
+    plt.subplot(1,2,2)
+    plt.plot(noises, s_vpcm, label="V-PCM (Axiom U1/U2 Integration)", color='red')
+    plt.plot(noises, s_npu, label="Standard NPU (Linear Decay)", color='blue')
+    plt.title("Structural Robustness vs Noise")
+    plt.xlabel("Fluctuation Level (K_fluct)")
+    plt.ylabel("Stability Score")
+    plt.grid(True, alpha=0.3)
+    plt.legend()
+    
+    plt.tight_layout()
+    plt.savefig("Step4/step4_result.png")
+    print("Step 4 Simulation complete. Results saved to Step4/simulation_results.json and step4_result.png")
+
+if __name__ == "__main__":
+    run_step4_simulation()

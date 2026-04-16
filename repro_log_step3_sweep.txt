@@ -1,0 +1,11 @@
+Starting Automated Parameter Sweep for Step 3...
+Blur: 0.5, Noise: 0.01 -> Rank Jump: +0.0381
+Blur: 0.5, Noise: 0.05 -> Rank Jump: +0.0938
+Blur: 0.5, Noise: 0.15 -> Rank Jump: +0.0000
+Blur: 1.5, Noise: 0.01 -> Rank Jump: +0.0421
+Blur: 1.5, Noise: 0.05 -> Rank Jump: +0.0836
+Blur: 1.5, Noise: 0.15 -> Rank Jump: +0.0000
+Blur: 3.0, Noise: 0.01 -> Rank Jump: +0.0542
+Blur: 3.0, Noise: 0.05 -> Rank Jump: +0.1058
+Blur: 3.0, Noise: 0.15 -> Rank Jump: +0.0000
+Sweep complete. Results saved to Step3/simulation_results.json and step3_result.png

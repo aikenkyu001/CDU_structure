@@ -1,0 +1,1 @@
+Step 1 Simulation complete. Results saved to Step1/simulation_results.json and step1_result.png

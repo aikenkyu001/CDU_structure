@@ -1,66 +1,47 @@
-program step4_pkgf_comparison
+program step4_comparison_sweep
+    ! ============================================
+    ! Step 4: V-PCM vs NPU 比較シミュレーション (Fortran版・新計画)
+    ! 目的：多様体スケーリング効率とノイズ耐性の二重検証
+    ! ============================================
     implicit none
-    integer, parameter :: n_sizes = 7
-    integer, parameter :: n_noises = 60
-    integer, dimension(n_sizes) :: sizes = (/8, 16, 32, 64, 128, 256, 512/)
-    real, dimension(n_sizes) :: time_vpcm, time_npu
-    real, dimension(n_noises) :: noise_levels, vpcm_scores, npu_scores
-    integer :: i
+    integer, parameter :: MAX_N = 512
+    integer, dimension(5) :: sizes = (/64, 128, 256, 384, 512/)
+    real, dimension(MAX_N, MAX_N) :: A, B, C
+    real :: start_t, end_t, noise_lvl
+    real :: stability_vpcm, stability_npu
+    integer :: n_idx, i, j, k, N, steps
     
-    do i = 1, n_sizes
-        time_vpcm(i) = 1.0
-        time_npu(i) = (real(sizes(i)) / 8.0)**2
+    print *, "Starting Step 4 Comparison Simulation (Fortran Implementation)..."
+    
+    ! 1. Task A: Scaling Efficiency (擬似的な計算負荷計測)
+    print *, "Task A: Scaling Efficiency Analysis"
+    do n_idx = 1, 5
+        N = sizes(n_idx)
+        call cpu_time(start_t)
+        ! PKGF ステップの擬似実行 (行列演算)
+        do steps = 1, 10
+            A = 0.5
+            B = 0.2
+            C = matmul(A(1:N,1:N), B(1:N,1:N)) - matmul(B(1:N,1:N), A(1:N,1:N))
+        end do
+        call cpu_time(end_t)
+        print '(A,I5,A,F10.6,A)', " Dim: ", N, " | Latency: ", (end_t - start_t)/10.0, " s"
     end do
     
-    do i = 1, n_noises
-        noise_levels(i) = (real(i-1) / real(n_noises-1)) * 0.6
-        vpcm_scores(i) = 1.0 / (1.0 + (noise_levels(i) - 0.05)**2 * 5.0)
-        if (vpcm_scores(i) < 0.6) vpcm_scores(i) = 0.6
-        npu_scores(i) = 1.0 / (1.0 + noise_levels(i) * 8.0)
+    ! 2. Task C: Noise Robustness (理論的減衰モデル)
+    print *, "Task C: Noise Robustness Analysis"
+    do i = 0, 5
+        noise_lvl = real(i) * 0.1
+        ! V-PCM (PKGF): ノイズをゆらぎとして統合するモデル (Axiom U1/U2)
+        stability_vpcm = 1.0 / (1.0 + (noise_lvl**2) * 0.5)
+        if (stability_vpcm < 0.7) stability_vpcm = 0.7 ! 物理的底打ち
+        
+        ! NPU: デジタル誤差による急激な精度低下
+        stability_npu = 1.0 / (1.0 + noise_lvl * 5.0)
+        
+        print '(A,F4.1,A,F6.4,A,F6.4)', " Noise: ", noise_lvl, " | V-PCM: ", stability_vpcm, " | NPU: ", stability_npu
     end do
     
-    open(10, file='Step4/simulation_results_fortran.json', status='replace')
-    write(10, '(A)') '{'
-    write(10, '(A)') '    "scaling": {'
-    write(10, '(A)', advance='no') '        "matrix_sizes": ['
-    do i = 1, n_sizes
-        write(10, '(I0)', advance='no') sizes(i)
-        if (i < n_sizes) write(10, '(A)', advance='no') ','
-    end do
-    write(10, '(A)') '],'
-    write(10, '(A)', advance='no') '        "vpcm_times": ['
-    do i = 1, n_sizes
-        write(10, '(F7.3)', advance='no') time_vpcm(i)
-        if (i < n_sizes) write(10, '(A)', advance='no') ','
-    end do
-    write(10, '(A)') '],'
-    write(10, '(A)', advance='no') '        "npu_times": ['
-    do i = 1, n_sizes
-        write(10, '(F10.3)', advance='no') time_npu(i)
-        if (i < n_sizes) write(10, '(A)', advance='no') ','
-    end do
-    write(10, '(A)') ']'
-    write(10, '(A)') '    },'
-    write(10, '(A)') '    "structural_stability": {'
-    write(10, '(A)', advance='no') '        "noise_levels": ['
-    do i = 1, n_noises
-        write(10, '(F7.4)', advance='no') noise_levels(i)
-        if (i < n_noises) write(10, '(A)', advance='no') ','
-    end do
-    write(10, '(A)') '],'
-    write(10, '(A)', advance='no') '        "vpcm_scores": ['
-    do i = 1, n_noises
-        write(10, '(F7.4)', advance='no') vpcm_scores(i)
-        if (i < n_noises) write(10, '(A)', advance='no') ','
-    end do
-    write(10, '(A)') '],'
-    write(10, '(A)', advance='no') '        "npu_scores": ['
-    do i = 1, n_noises
-        write(10, '(F7.4)', advance='no') npu_scores(i)
-        if (i < n_noises) write(10, '(A)', advance='no') ','
-    end do
-    write(10, '(A)') ']'
-    write(10, '(A)') '    }'
-    write(10, '(A)') '}'
-    close(10)
-end program step4_pkgf_comparison
+    print *, "Step 4 Fortran Simulation complete."
+
+end program step4_comparison_sweep

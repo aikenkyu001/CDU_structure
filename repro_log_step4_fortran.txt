@@ -1,0 +1,15 @@
+ Starting Step 4 Comparison Simulation (Fortran Implementation)...
+ Task A: Scaling Efficiency Analysis
+ Dim:    64 | Latency:   0.001145 s
+ Dim:   128 | Latency:   0.001209 s
+ Dim:   256 | Latency:   0.002415 s
+ Dim:   384 | Latency:   0.004259 s
+ Dim:   512 | Latency:   0.007492 s
+ Task C: Noise Robustness Analysis
+ Noise:  0.0 | V-PCM: 1.0000 | NPU: 1.0000
+ Noise:  0.1 | V-PCM: 0.9950 | NPU: 0.6667
+ Noise:  0.2 | V-PCM: 0.9804 | NPU: 0.5000
+ Noise:  0.3 | V-PCM: 0.9569 | NPU: 0.4000
+ Noise:  0.4 | V-PCM: 0.9259 | NPU: 0.3333
+ Noise:  0.5 | V-PCM: 0.8889 | NPU: 0.2857
+ Step 4 Fortran Simulation complete.

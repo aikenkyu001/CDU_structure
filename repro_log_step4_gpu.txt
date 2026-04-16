@@ -1,0 +1,10 @@
+Starting Real M1 GPU Benchmark using MLX...
+ Dimension |    PKGF (ms) | Standard (ms)
+----------------------------------------
+       128 |       0.2264 |       0.3069
+       256 |       0.4038 |       0.4612
+       512 |       1.1060 |       1.2107
+      1024 |       3.3813 |       3.9528
+      2048 |      23.4889 |      19.3866
+----------------------------------------
+Real M1 benchmark complete. Results saved as Step4/step4_real_m1_result.png

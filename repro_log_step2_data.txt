@@ -1,0 +1,14 @@
+--- Mimosa pudica Phase Transition (U) Analysis ---
+   Charge (uC)  Trials  Success Rate
+0      0.00009       2          0.00
+1      0.00900       6          0.00
+2      0.09000       5          0.00
+3      0.90000      10          0.40
+4      9.00000       6          0.50
+5    423.00000       2          0.50
+6    900.00000       1          0.00
+7   4230.00000       4          0.75
+
+Estimated Critical Charge (Threshold for U): 9.0 uC
+
+Analysis complete. Results saved to Step2/plant_data_analysis.json and plant_data_plot.png

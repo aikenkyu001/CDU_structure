@@ -1,0 +1,10 @@
+--- GPU (MLX) Benchmark (N=64) ---
+  PKGF (N^3):     0.1736 ms
+  MLP  (N^4):     1.4616 ms
+  Speedup: 8.42x
+--- CPU (NumPy) Benchmark (N=64) ---
+  PKGF (N^3):     0.0093 ms
+  MLP  (N^4):     1.8380 ms
+  Speedup: 198.69x
+
+Multi-device benchmark complete.

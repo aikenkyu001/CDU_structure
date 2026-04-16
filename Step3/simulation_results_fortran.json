@@ -1,7 +1,56 @@
-{
-    "initial_rank": 336.218445,
-    "final_rank":   4.186475,
-    "max_rank": 336.218445,
-    "rank_jump_detected": false,
-    "final_stability":   0.410840
-}
+[
+  {
+    "blur":   0.50,
+    "noise":   0.01,
+    "jump": **********,
+    "final_rank":   1.000006
+  },
+  {
+    "blur":   0.50,
+    "noise":   0.05,
+    "jump": **********,
+    "final_rank":   1.000001
+  },
+  {
+    "blur":   0.50,
+    "noise":   0.15,
+    "jump": **********,
+    "final_rank":   1.000002
+  },
+  {
+    "blur":   1.50,
+    "noise":   0.01,
+    "jump": **********,
+    "final_rank":   1.000004
+  },
+  {
+    "blur":   1.50,
+    "noise":   0.05,
+    "jump": **********,
+    "final_rank":   1.000005
+  },
+  {
+    "blur":   1.50,
+    "noise":   0.15,
+    "jump": **********,
+    "final_rank":   1.000005
+  },
+  {
+    "blur":   3.00,
+    "noise":   0.01,
+    "jump": **********,
+    "final_rank":   1.000002
+  },
+  {
+    "blur":   3.00,
+    "noise":   0.05,
+    "jump": **********,
+    "final_rank":   1.000017
+  },
+  {
+    "blur":   3.00,
+    "noise":   0.15,
+    "jump": **********,
+    "final_rank":   1.000049
+  }
+]

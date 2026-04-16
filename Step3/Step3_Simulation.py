@@ -1,100 +1,116 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.ndimage import gaussian_filter
-
-# ============================================
-# Step 3: Optical V-PCM 物理シミュレーション (PKGF Axiom U3 準拠)
-# 目的：統一方程式 \nabla K = [\Omega, K] - \lambda D(K) の光学系での物理的再現
-# ============================================
-
-def calculate_effective_rank(K):
-    """Axiom D3/U6: 簡易ランク推定 (Double Validation 用)"""
-    return np.sum(K**2) / (np.max(K)**2 + 1e-12)
-
-def simulate_step3_pkgf_flow(size=32, steps=400, lambda_param=0.1, sigma=1.2, noise_lvl=0.02):
-    """
-    Axiom U3: \nabla K = [\Omega, K] - \lambda D(K)
-    size: 多様体 M の次元 (N x N)
-    steps: ダイナミクスステップ数
-    lambda_param: 散逸係数 \lambda
-    sigma: 光学散逸作用素 D(K) のボケ幅 (PSF)
-    """
-    # Axiom A3: 初期並行鍵 K (ランダムな低ランク状態)
-    K = np.random.rand(size, size)
-    
-    # Axiom A6: 意味ポテンシャル \Omega (ターゲットとなる構造の核)
-    # ここでは中央に集約する構造を Omega とする
-    Omega = np.zeros((size, size))
-    Omega[size//4:3*size//4, size//4:3*size//4] = 1.0
-    
-    ranks = []
-    structural_stability = []
-    
-    for t in range(steps):
-        # 1. 構築項 [\Omega, K] (Axiom C1): 外部情報による構造へのガイド
-        # 簡易的に Omega と K の相互作用を計算
-        construction = (Omega @ K - K @ Omega) * 0.1
-        
-        # 2. 散逸項 - \lambda D(K) (Axiom D2): 光学的なボケによる次元崩壊
-        # PSF を散逸作用素 D として扱う
-        K_blurred = gaussian_filter(K, sigma=sigma)
-        dissipation = -lambda_param * (K - K_blurred)
-        
-        # 3. 統一方程式 (Axiom U3) に基づく更新
-        # \nabla K = [\Omega, K] - \lambda D(K)
-        # 非線形活性化 (Axiom U4: ゲージ破れを誘発する非線形性)
-        K_next = K + construction + dissipation
-        K_next = np.exp(K_next * 2.5) # 非線形増幅
-        K_next /= (np.max(K_next) + 1e-12) # 規格化
-        
-        # Axiom U1/U2: 複素的な揺らぎ K_fluct の付加 (ノイズを揺らぎとして統合)
-        K_fluct = np.random.normal(0, noise_lvl, (size, size))
-        K = K_next + K_fluct
-        K = np.clip(K, 0, 1)
-        
-        # 秩序変数の記録
-        r = calculate_effective_rank(K)
-        ranks.append(r)
-        
-        # 構造安定性の評価 (Omega との相関)
-        stability = np.corrcoef(K.flatten(), Omega.flatten())[0,1]
-        structural_stability.append(stability)
-
-    return ranks, structural_stability
-
-# 実験実行
-ranks, stability = simulate_step3_pkgf_flow(steps=300)
-
-# 結果の保存 (JSON)
+import cv2
 import json
-results = {
-    "initial_rank": float(ranks[0]),
-    "final_rank": float(ranks[-1]),
-    "max_rank": float(np.max(ranks)),
-    "rank_jump_detected": bool(np.max(ranks) > ranks[0] * 1.5), # Axiom U6
-    "final_stability": float(stability[-1])
-}
-with open("Step3/simulation_results.json", "w") as f:
-    json.dump(results, f, indent=4)
+import matplotlib.pyplot as plt
+from scipy.linalg import svd
+import os
 
-# 可視化
-plt.figure(figsize=(10, 6))
-plt.subplot(2,1,1)
-plt.plot(ranks, label="Effective Rank (Dynamic Dimension d_eff)", color='purple')
-plt.axhline(ranks[0], color='gray', linestyle='--', alpha=0.5, label='Initial State')
-plt.title("Step 3: PKGF Unified Flow Dynamics (Axiom U3/U6)")
-plt.ylabel("Dimension (Rank)")
-plt.grid(True, alpha=0.3)
-plt.legend()
+# ============================================
+# Step 3: 改訂版・生成型デジタル PKGF シミュレーション (修正版)
+# 目的：パラメータスイープによる次元跳躍 (Rank Jump) の網羅的探索
+# ============================================
 
-plt.subplot(2,1,2)
-plt.plot(stability, label="Structural Stability (Axiom U5: Emergent Sector)", color='green')
-plt.title("Emergence of Stable Structure via Unified Equation")
-plt.xlabel("PKGF Time Step (t)")
-plt.ylabel("Stability Score")
-plt.grid(True, alpha=0.3)
-plt.legend()
+# --- 定数・公理パラメータの初期値 ---
+N = 100            # 多様体の解像度
+ETA = 0.25         # 構築項の学習率 (Axiom C1)
+STEPS_PER_SIM = 200
 
-plt.tight_layout()
-plt.savefig("Step3/step3_result.png")
-print(f"Step 3 PKGF Simulation complete. Results saved to Step3/simulation_results.json and step3_result.png")
+def get_effective_rank(K):
+    """SVDに基づく有効ランク (d_eff) の計算: Axiom U6 の指標"""
+    s = svd(K, compute_uv=False)
+    p = (s**2) / (np.sum(s**2) + 1e-12)
+    p = p[p > 0]
+    return np.exp(-np.sum(p * np.log(p)))
+
+def generate_stimulus(t, pattern_type='circle'):
+    """動的な意味ポテンシャル Omega の生成"""
+    img = np.zeros((N, N), dtype=np.float32)
+    if pattern_type == 'circle':
+        center = (int(50 + 25*np.cos(t/15)), int(50 + 25*np.sin(t/15)))
+        cv2.circle(img, center, 12, 1.0, -1)
+    elif pattern_type == 'grid':
+        img[::20, :] = 0.6
+        img[:, ::20] = 0.6
+    return img
+
+def apply_environment(img, blur_sigma, noise_level):
+    """環境フィルター: 散逸 (D) と ゆらぎ (U1)"""
+    if blur_sigma > 0:
+        k_size = int(blur_sigma * 3) * 2 + 1
+        img = cv2.GaussianBlur(img, (k_size, k_size), blur_sigma)
+    noise = np.random.normal(0, noise_level, (N, N))
+    return np.clip(img + noise, 0, 1)
+
+def run_single_experiment(blur_sigma, noise_level, pattern='circle'):
+    """特定のパラメータ条件下でのシミュレーション実行"""
+    # 初期並行鍵 K (非常に低いランクから開始して構造生成を観測しやすくする)
+    K = np.ones((N, N), dtype=np.float32) * 0.01
+    history_rank = []
+    
+    for t in range(STEPS_PER_SIM):
+        # 1. Generator & Environment
+        raw_stim = generate_stimulus(t, pattern)
+        Omega = apply_environment(raw_stim, blur_sigma, noise_level)
+        
+        # 2. PKGF Unified Flow (Axiom U3)
+        # 内部散逸 (D)
+        K_d = cv2.GaussianBlur(K, (5, 5), 0.8)
+        # 構築 (C): [Omega, K]
+        commutator = np.dot(Omega, K) - np.dot(K, Omega)
+        K = K_d + ETA * commutator
+        
+        # ゲージ破れ (U4): 非線形増幅
+        K = np.exp(K * 2.0)
+        K = K / (np.linalg.norm(K, ord='fro') + 1e-12) * 10.0
+        
+        history_rank.append(get_effective_rank(K))
+    
+    # ランクの跳躍量 (初期と最終の差)
+    rank_jump = history_rank[-1] - history_rank[0]
+    return rank_jump, history_rank[-1]
+
+def run_parameter_sweep():
+    print("Starting Automated Parameter Sweep for Step 3...")
+    
+    # 探索範囲を広げる
+    blurs = [0.5, 1.5, 3.0]
+    noises = [0.01, 0.05, 0.15]
+    
+    sweep_results = []
+    
+    for b in blurs:
+        for n in noises:
+            jump, final_rank = run_single_experiment(b, n)
+            sweep_results.append({
+                "blur": b,
+                "noise": n,
+                "jump": float(jump),
+                "final_rank": float(final_rank)
+            })
+            print(f"Blur: {b:.1f}, Noise: {n:.2f} -> Rank Jump: {jump:+.4f}")
+
+    # 結果の保存
+    with open("Step3/simulation_results.json", "w") as f:
+        json.dump(sweep_results, f, indent=4)
+    
+    # 代表的なグラフの作成
+    plt.figure(figsize=(10, 8))
+    
+    # Scatter plot for sweep
+    for res in sweep_results:
+        size = abs(res["jump"]) * 1000 + 10 # 最小サイズを保証
+        color = 'red' if res["jump"] > 0 else 'blue'
+        plt.scatter(res["blur"], res["noise"], s=size, alpha=0.6, 
+                    c=color, edgecolors='black')
+        plt.text(res["blur"], res["noise"] + 0.005, f"{res['jump']:+.3f}", 
+                 ha='center', fontsize=9, fontweight='bold')
+
+    plt.title("Step 3 Sweep: Rank Jump Intensity (Red: Increase, Blue: Decrease)")
+    plt.xlabel("Dissipation (Blur Sigma)")
+    plt.ylabel("Fluctuation (Noise Level)")
+    plt.grid(True, alpha=0.3)
+    plt.savefig("Step3/step3_result.png")
+    print("Sweep complete. Results saved to Step3/simulation_results.json and step3_result.png")
+
+if __name__ == "__main__":
+    run_parameter_sweep()

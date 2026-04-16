@@ -1,0 +1,30 @@
+Torch version 2.8.0 has not been tested with coremltools. You may run into unexpected errors. Torch 2.7.0 is the most recent version that has been tested.
+When both 'convert_to' and 'minimum_deployment_target' not specified, 'convert_to' is set to "mlprogram" and 'minimum_deployment_target' is set to ct.target.iOS15 (which is same as ct.target.macOS12). Note: the model will not run on systems older than iOS15/macOS12/watchOS8/tvOS15. In order to make your model run on older system, please set the 'minimum_deployment_target' to iOS14/iOS13. Details please see the link: https://apple.github.io/coremltools/docs-guides/source/target-conversion-formats.html
+ Dimension |   PKGF-GPU (ms) |    ANE-NPU (ms)
+--------------------------------------------------
+Compiling and testing for dimension 128...
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 1760.83 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 2533.10 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]/Users/miyata/Library/Python/3.9/lib/python/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '6', of the source model, has been renamed to 'var_6' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 3436.80 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 12246.14 passes/s]
+When both 'convert_to' and 'minimum_deployment_target' not specified, 'convert_to' is set to "mlprogram" and 'minimum_deployment_target' is set to ct.target.iOS15 (which is same as ct.target.macOS12). Note: the model will not run on systems older than iOS15/macOS12/watchOS8/tvOS15. In order to make your model run on older system, please set the 'minimum_deployment_target' to iOS14/iOS13. Details please see the link: https://apple.github.io/coremltools/docs-guides/source/target-conversion-formats.html
+       128 |          0.2315 |          0.0405
+Compiling and testing for dimension 512...
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 4000.29 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 18791.68 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]/Users/miyata/Library/Python/3.9/lib/python/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '6', of the source model, has been renamed to 'var_6' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5618.27 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 12998.88 passes/s]
+When both 'convert_to' and 'minimum_deployment_target' not specified, 'convert_to' is set to "mlprogram" and 'minimum_deployment_target' is set to ct.target.iOS15 (which is same as ct.target.macOS12). Note: the model will not run on systems older than iOS15/macOS12/watchOS8/tvOS15. In order to make your model run on older system, please set the 'minimum_deployment_target' to iOS14/iOS13. Details please see the link: https://apple.github.io/coremltools/docs-guides/source/target-conversion-formats.html
+       512 |          0.8037 |          0.0627
+Compiling and testing for dimension 1024...
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 3731.59 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 15673.78 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 2378.21 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 12270.03 passes/s]
+      1024 |          2.9610 |          0.1502
+--------------------------------------------------
+True ANE vs GPU experiment complete.

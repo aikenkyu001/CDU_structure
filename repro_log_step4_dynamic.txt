@@ -1,0 +1,14 @@
+Torch version 2.8.0 has not been tested with coremltools. You may run into unexpected errors. Torch 2.7.0 is the most recent version that has been tested.
+When both 'convert_to' and 'minimum_deployment_target' not specified, 'convert_to' is set to "mlprogram" and 'minimum_deployment_target' is set to ct.target.iOS15 (which is same as ct.target.macOS12). Note: the model will not run on systems older than iOS15/macOS12/watchOS8/tvOS15. In order to make your model run on older system, please set the 'minimum_deployment_target' to iOS14/iOS13. Details please see the link: https://apple.github.io/coremltools/docs-guides/source/target-conversion-formats.html
+Starting Task E: Real-time Weight Update Benchmark (Dim: 512)
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/2 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  50%|█████     | 1/2 [00:00<00:00, 910.02 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 10290.25 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]/Users/miyata/Library/Python/3.9/lib/python/site-packages/coremltools/converters/mil/mil/passes/defs/preprocess.py:273: UserWarning: Output, '5', of the source model, has been renamed to 'var_5' in the Core ML model.
+  warnings.warn(msg.format(var.name, new_name))
+Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 4245.97 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 13015.68 passes/s]
+Result (Lower is better):
+  ANE (Neural Engine) latency:     0.0428 ms/step
+  PKGF (GPU/MLX)      latency:     0.8088 ms/step
+----------------------------------------
+CONCLUSION: ANE is still faster for static paths, but PKGF is catching up.
