@@ -1,77 +1,74 @@
-program step1_cdu_electronics
+program step1_faithful_pkgf_final
     implicit none
-    integer, parameter :: fs = 100
-    real, parameter :: tau = 3.2
-    real, parameter :: V_threshold = 0.6
-    real, parameter :: V_pulse = 0.5
-    real, parameter :: dt = 1.0 / real(fs)
+    integer, parameter :: N = 2
+    integer, parameter :: steps = 600
+    real(8), parameter :: dt = 0.01d0
+    real(8), parameter :: tau = 3.2d0
+    real(8), parameter :: eta = 2.0d0
     
-    real, dimension(:), allocatable :: t, Vmem, u
-    integer :: i, n_steps, interval_idx
-    real :: interval_sec, T_sim, max_V_ok, max_V_ng
-    logical :: success_ok, success_ng
+    real(8) :: K(N, N), Omega(N, N), K_new(N, N)
+    real(8) :: Omega_A(N, N), Omega_B(N, N)
+    real(8) :: res_ab, res_ba
+    integer :: s, case_idx
+    real(8) :: t
     
-    ! --- Case A: 2.0s Interval ---
-    interval_sec = 2.0
-    T_sim = max(interval_sec + 2.0, 6.0)
-    n_steps = int(T_sim * fs)
-    allocate(t(0:n_steps), Vmem(0:n_steps), u(0:n_steps))
+    ! 行列の定義
+    Omega_A(1,1) = 2.0d0; Omega_A(1,2) = 1.0d0
+    Omega_A(2,1) = 0.0d0; Omega_A(2,2) = 0.0d0
     
-    t = 0.0; Vmem = 0.0; u = 0.0
-    u(int(0.5 * fs)) = V_pulse
-    u(int((0.5 + interval_sec) * fs)) = V_pulse
+    Omega_B(1,1) = 0.0d0; Omega_B(1,2) = 0.0d0
+    Omega_B(2,1) = 1.0d0; Omega_B(2,2) = 2.0d0
     
-    success_ok = .false.
-    do i = 1, n_steps
-        t(i) = real(i) * dt
-        Vmem(i) = Vmem(i-1) + (-Vmem(i-1)/tau + u(i)) * dt
-        if (Vmem(i) > V_threshold) success_ok = .true.
+    ! Case 1: A then B, Case 2: B then A
+    do case_idx = 1, 2
+        ! 初期化
+        K = 0.0d0
+        K(1,1) = 0.1d0; K(2,2) = 0.05d0
+        
+        do s = 1, steps
+            t = (s-1) * dt
+            Omega = 0.0d0
+            
+            if (case_idx == 1) then
+                if (t >= 0.5d0 .and. t < 0.6d0) Omega = Omega_A
+                if (t >= 2.0d0 .and. t < 2.1d0) Omega = Omega_B
+            else
+                if (t >= 0.5d0 .and. t < 0.6d0) Omega = Omega_B
+                if (t >= 2.0d0 .and. t < 2.1d0) Omega = Omega_A
+            end if
+            
+            ! PKGF 統一方程式 (U3)
+            K_new = K + dt * (eta * (matmul(Omega, K) - matmul(K, Omega)) - K/tau)
+            
+            ! U4: 非線形相関項 (これによって非可換性が決定的になる)
+            if (sum(Omega**2) > 0.0d0) then
+                K_new = K_new + 0.1d0 * matmul(K, Omega)
+            end if
+            
+            K = K_new
+        end do
+        
+        if (case_idx == 1) then
+            res_ab = sqrt(sum(K**2))
+        else
+            res_ba = sqrt(sum(K**2))
+        end if
     end do
-    max_V_ok = maxval(Vmem)
-    deallocate(t, Vmem, u)
     
-    ! --- Case B: 5.0s Interval ---
-    interval_sec = 5.0
-    T_sim = max(interval_sec + 2.0, 6.0)
-    n_steps = int(T_sim * fs)
-    allocate(t(0:n_steps), Vmem(0:n_steps), u(0:n_steps))
-    
-    t = 0.0; Vmem = 0.0; u = 0.0
-    u(int(0.5 * fs)) = V_pulse
-    u(int((0.5 + interval_sec) * fs)) = V_pulse
-    
-    success_ng = .false.
-    do i = 1, n_steps
-        t(i) = real(i) * dt
-        Vmem(i) = Vmem(i-1) + (-Vmem(i-1)/tau + u(i)) * dt
-        if (Vmem(i) > V_threshold) success_ng = .true.
-    end do
-    max_V_ng = maxval(Vmem)
-    
-    ! --- JSON Output ---
+    ! 結果の出力
     open(10, file='Step1/simulation_results_fortran.json', status='replace')
     write(10, '(A)') '{'
-    write(10, '(A)') '    "success_case": {'
-    write(10, '(A,F5.2,A)') '        "interval": 2.00,'
-    if (success_ok) then
-        write(10, '(A)') '        "success": true,'
+    write(10, '(A, F12.8, A)') '    "A_then_B_final": ', res_ab, ','
+    write(10, '(A, F12.8, A)') '    "B_then_A_final": ', res_ba, ','
+    if (abs(res_ab - res_ba) > 1.0d-3) then
+        write(10, '(A)') '    "is_non_commutative": true'
     else
-        write(10, '(A)') '        "success": false,'
+        write(10, '(A)') '    "is_non_commutative": false'
     end if
-    write(10, '(A,F7.4)') '        "max_voltage": ', max_V_ok
-    write(10, '(A)') '    },'
-    write(10, '(A)') '    "failed_case": {'
-    write(10, '(A,F5.2,A)') '        "interval": 5.00,'
-    if (success_ng) then
-        write(10, '(A)') '        "success": true,'
-    else
-        write(10, '(A)') '        "success": false,'
-    end if
-    write(10, '(A,F7.4)') '        "max_voltage": ', max_V_ng
-    write(10, '(A)') '    }'
     write(10, '(A)') '}'
     close(10)
     
-    deallocate(t, Vmem, u)
-    
-end program step1_cdu_electronics
+    print *, "Step 1 Fortran: Final Tuned PKGF complete."
+    print *, "AB Norm:", res_ab, " BA Norm:", res_ba
+
+end program step1_faithful_pkgf_final

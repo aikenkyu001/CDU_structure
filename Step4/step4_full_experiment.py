@@ -102,7 +102,7 @@ def run_benchmark():
     plt.yscale('log')
     plt.xlabel('Manifold Dimension (N)')
     plt.ylabel('Execution Time per Step (ms)')
-    plt.title('Axiom A1: Dimensional Scaling Analysis (M1 Optimized Logic)')
+    plt.title('Axiom A1: Dimensional Scaling Analysis (M2 Optimized Logic)')
     plt.legend()
     plt.grid(True, which="both", ls="-", alpha=0.5)
     
@@ -110,9 +110,9 @@ def run_benchmark():
     plt.annotate('PKGF Scalability Advantage', xy=(2048, pkgf_times[-1]), xytext=(1000, pkgf_times[-1]*5),
                  arrowprops=dict(facecolor='black', shrink=0.05))
 
-    plt.savefig("Step4/step4_full_experiment_result.png")
+    plt.savefig("Step4/step4_scaling_detail.png")
     print("-" * 40)
-    print(f"Full-scale experiment complete. Plot saved as Step4/step4_full_experiment_result.png")
+    print(f"Full-scale experiment complete. Plot saved as Step4/step4_scaling_detail.png")
 
 if __name__ == "__main__":
     run_benchmark()

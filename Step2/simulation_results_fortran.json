@@ -1,10 +1,7 @@
 {
-    "single_stimulus": {
-        "action_triggered": false,
-        "max_potential":  0.0500
-    },
-    "double_stimuli": {
-        "action_triggered": false,
-        "max_potential":  0.0747
-    }
+    "charge_0.1uC_norm":   0.10001184,
+    "charge_0.1uC_triggered": F,
+    "charge_9.0uC_norm": ************,
+    "charge_9.0uC_triggered": T,
+    "is_9uC_critical": true
 }

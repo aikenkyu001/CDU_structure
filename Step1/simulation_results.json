@@ -1,12 +1,5 @@
 {
-    "success_case": {
-        "interval": 2.0,
-        "success": false,
-        "max_voltage": 0.00767368938472675
-    },
-    "failed_case": {
-        "interval": 5.0,
-        "success": false,
-        "max_voltage": 0.006045495993739205
-    }
+    "A_then_B_final": 0.24174357440880048,
+    "B_then_A_final": 0.17723920433246423,
+    "is_non_commutative": true
 }

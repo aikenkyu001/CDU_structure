@@ -49,10 +49,15 @@
 - ヒステリシス構造の同型性  
 → **「素子が違っても C・D・U が同じなら知性の最小構造は同型」**という結論を出す。
 
-**アウトプット：**  
-- 回路図 2 種  
-- 入力パターン vs 出力の比較表  
-- 簡易論文 or ノート（PKGF_CDU_electronic.md）
+### [追加] 実験方法 (Methodology) - Faithful PKGF
+1. **多様体構成**: $2 \times 2$ の実数行列 $K$ を内部状態（並行鍵）とする。
+2. **刺激定義**: 非可換な 2 つの入力ポテンシャル $\Omega_A, \Omega_B$（$[\Omega_A, \Omega_B] \neq 0$）を定義。
+3. **フロー執行**: 統一方程式 $\dot{K} = \eta [\Omega, K] - K/\tau$ を計算。
+4. **非線形相関**: 入力時に相関項 $0.1 K \Omega$ を加え、順序による構造的分岐を加速させる。
+
+### [追加] 期待される成果物 (Outputs)
+- `step1_result.png`: 入力順序（A→B vs B→A）による行列ノルム $\|K\|$ の推移差を示すグラフ。
+- `simulation_results.json`: 最終ノルムと非可換性の判定結果（True/False）。
 
 ---
 
@@ -89,11 +94,14 @@
 - U：行動発火条件  
 → 状態方程式＋相転移条件として書き下ろす。
 
-**アウトプット：**  
-- 植物データ解析ノート  
-- C・D・U パラメータ表  
-- シミュレーション（刺激 → 内部状態 → 行動）  
-- 論文ドラフト（PKGF_plant_intelligence.md）
+### [追加] 実験方法 (Methodology) - Faithful PKGF
+1. **データ復元**: AAA-2003 データセットの統計テーブルに基づき、刺激強度と成功率の相関をプロット。
+2. **行列シミュレーション**: $4 \times 4$ 行列 $K$ を用い、電荷量 $Q$ に比例したランダム刺激 $\Omega$ を注入。
+3. **Rank Jump 観測**: 内部歪み（非対角ノルム）が閾値 0.05 を超えた際、非線形増幅 $U$ を発動させ、有効ランク $d_{\text{eff}}$ が 1.0 から 4.0 へ跳躍するプロセスを再現。
+
+### [追加] 期待される成果物 (Outputs)
+- `step2_result.png`: 臨界電荷（9.0 µC）における $d_{\text{eff}}$ の不連続な上昇を示すグラフ。
+- `plant_data_plot.png`: 実測データに基づく相転移臨界点（9.0 µC）の統計プロット。
 
 ---
 
@@ -128,14 +136,19 @@
 - 数値 V‑PCM と比較  
 - rank jump / gauge breaking / phase transition の再現性を確認
 
-**アウトプット：**  
-- Optical V‑PCM 実験ログ  
-- 数値 vs 物理の比較図  
-- 論文ドラフト（V‑PCM_physical_realization.md）
+### [追加] 実験方法 (Methodology) - Faithful PKGF
+1. **多様体解像度**: $100 \times 100$ の多様体グリッド上で動的な刺激 $\Omega(t)$ を生成。
+2. **散逸定義**: ガウシアンカーネル $\sigma$ による空間的な情報の拡散。
+3. **揺らぎ注入**: ホワイトノイズ $\xi$ を注入し、Rank Jump 強度をパラメータスイープ。
+4. **構造確定**: 非線形相転移（$\exp(K)$）による一点解への集約。
+
+### [追加] 期待される成果物 (Outputs)
+- `step3_result.png`: 散逸強度 vs 揺らぎ強度の相図（Rank Jump の最大点を示すスイープ図）。
+- `step3_evolution.png`: 構造化された並行鍵 $K$ の最終形態スナップショット。
 
 ---
 
-## Step 4：Neural Engine との比較実験 (公理的優位性の検証)
+## Step 4：Neural Engine (M2) との比較実験 (公理的優位性の検証)
 
 ### 目的
 - **Axiom U1/U2（複素並行鍵）** に基づき、Hybrid Photonic Computing（V‑PCM）と既存のシリコン AI 基盤（NPU）を、構造安定性、次元拡張性、エネルギー効率の観点から比較・評価する。
@@ -165,16 +178,15 @@
 - **Manifold Latency**: 状態空間の拡張に対する応答速度の追従性。
 - **Energy per Jump**: 構造の再構成（Phase Transition）にかかるエネルギー。
 
-**アウトプット：**  
-- 実験レポート  
-- 比較表・相図・構造指標のグラフ  
-- 論文ドラフト（Hybrid_Photonic_vs_NeuralEngine.md）
+### [追加] 実験方法 (Methodology) - Faithful PKGF (M2 Optimized)
+1. **全デバイス計測**: Mac mini M2 の CPU (AMX), GPU (MLX), ANE (CoreML) を用い、Faithful PKGF フローのレイテンシを実測。
+2. **スケーリング解析**: 多様体次元 $N$ の増大に対する、幾何論理 ($O(N^3)$) と MLP ($O(N^4)$) のスケーラビリティ比較。
+3. **自律的復元力**: 強烈なノイズ下において、静的推論（誤認）から PKGF フローによる動的正解（DOG 確定）への転移を実測。
 
----
-
-## 最後に
-
-この 4 ステップにより、**「知能とは、媒体を問わず PKGF 公理体系に従って相転移し続ける物理現象である」** という本研究の核心を実証します。
+### [追加] 期待される成果物 (Outputs)
+- `step4_real_m2_result.png`: Mac mini M2 における CPU/GPU/ANE の性能比較プロット。
+- `step4_scaling_detail.png`: 多様体次元増大に対する詳細な演算効率解析図。
+- `reconstructed_K.png`: ノイズに埋もれた刺激から自律的に復元された並行鍵 $K$ の証拠画像。
 
 ---
 

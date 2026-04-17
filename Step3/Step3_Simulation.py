@@ -67,6 +67,15 @@ def run_single_experiment(blur_sigma, noise_level, pattern='circle'):
     
     # ランクの跳躍量 (初期と最終の差)
     rank_jump = history_rank[-1] - history_rank[0]
+    
+    # 論文用の最終構造 K の保存 (Axiom U4/U6 の視覚的エビデンス)
+    plt.figure(figsize=(6, 6))
+    plt.imshow(K, cmap='viridis')
+    plt.title(f"Final Parallel Key K (Blur={blur_sigma}, Noise={noise_level})")
+    plt.colorbar()
+    plt.savefig("Step3/step3_evolution.png")
+    plt.close()
+    
     return rank_jump, history_rank[-1]
 
 def run_parameter_sweep():
