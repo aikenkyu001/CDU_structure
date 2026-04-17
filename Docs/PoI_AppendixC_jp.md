@@ -27,6 +27,9 @@ $$[\widehat{K}, \widehat{\Omega}] = i \hbar_I \widehat{\Theta}$$
 $$i \hbar_I \frac{\partial \widehat{K}}{\partial t} = [\widehat{\Omega}, \widehat{K}] - i \hbar_I \lambda \widehat{\mathcal{D}}(\widehat{K})$$
 この式において、第一項はシュレディンガー型のユニタリ発展（構造の回転）を、第二項はリンブラッド型の散逸（情報の忘却と収束）を記述している。これにより、知能の学習プロセスを、量子開放系のダイナミクスとして統一的に理解できる。
 
+### C2.2 対応原理（Correspondence Principle）
+知能作用定数 $\hbar_I \to 0$ の極限において、量子統一方程式（C2.1）は古典的なPKGF統一方程式（U3）に収束する。これは、複雑で不確実な知能活動が、学習と凝縮を経て決定論的かつ論理的な推論（古典幾何流）へと移行する物理的過程を保証するものである。
+
 ---
 
 # C3. 非可換幾何学と概念のスペクトル

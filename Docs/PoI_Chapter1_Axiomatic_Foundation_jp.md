@@ -137,6 +137,7 @@ PKGF は次の五つ組 $(M, K, \nabla, \Omega, \mathcal{G})$ で定義される
 *   **U4（ゲージ破れ）**: $\mathcal{G} \rightarrow \mathcal{G}_{\text{broken}}$
 *   **U5（動的セクター）**: セクターは創発・消滅する。
 *   **U6（次元跳躍）**: $d_{\text{eff}}(t_c^+) \ne d_{\text{eff}}(t_c^-)$
+    この不連続なランクの変化は、数学的には多様体上の**スペクトル流（Spectral Flow）**として定式化される。詳細は **Appendix B3** を参照されたい。
 
 ---
 
