@@ -212,6 +212,5 @@ __marimo__/
 *.o
 
 .DS_Store
-References/
-PDF/
+References/PDF/
 Step2/data_repo
