@@ -23,14 +23,21 @@ Apple Silicon (M2) の物理環境（Mac mini M2）において、MLX (GPU)、Co
 ![Step 4 Detailed Scaling Analysis](images/step4_scaling_detail.png)
 *Figure 3.5.2: 多様体次元増大に対する詳細なスケーリング解析。PKGF 方式が既存の静的演算（MLP）に対し、次元拡張に対するペナルティをいかに低減できているかを定量的に示している。*
 
+![Step 4 Full Experiment Result](images/step4_full_experiment_result.png)
+*Figure 3.5.2.8: 全デバイス（CPU/GPU/ANE）における総合ベンチマーク・エビデンス。負荷条件を変動させた際の物理レイテンシと構造整合性の相関を網羅的に示している。*
+
 2. **グローバル情報処理効率 (Phase 5/6)**:
    画素数 4096 ($N=64$) の全体相関を抽出するタスク（Task G）における加速倍率は、CPU (AMX) において **198.69x** を記録した。
 
 ### 3.5.3 Autonomous Restoration: 高ノイズ下における「静的誤認」から「動的正解」への相転移プロセス（Phase 7/8）
 強烈なノイズ（レベル 0.5）に埋もれた画像に対し、動的な PKGF フローを執行し、自律的に構造を復元した。
 
+![Original Reference Image](images/Copilot_20260416_115108.png)
+*Figure 3.5.2.9: 実験のグラウンド・トゥルースとして使用された元画像。この鮮明な構造に対し、意図的に強烈な物理ノイズを混入させ、復元能力を検証した。*
+
 ![Step 4 Autonomous Restoration](images/reconstructed_K.png)
 *Figure 3.5.3: PKGF による自律的復元の実証。極度のノイズ（左）に埋もれた刺激に対し、幾何流（Axiom U3）を適用することで、意味のある構造（右：並行鍵 K）が自律的に浮かび上がっている。これにより静的な AI では誤認された対象（DOG）が正確に確定された。*
+
 
 ### 3.5.4 Multi-Device Intelligence: 動的思考の物理実装効率 (Phase 9/10)
 知能の「思考サイクル」（100 ステップの動的再構成）にかかる時間を全デバイスで比較した。
@@ -40,6 +47,32 @@ Apple Silicon (M2) の物理環境（Mac mini M2）において、MLX (GPU)、Co
 - **ANE (Dedicated)**: **6.19 ms** (Dim 128)
 
 この結果は、知能の「動的な書き換え」においては、専用エンジン（ANE）が他の追随を許さない機動力を持つことを示唆している。
+
+### 3.5.5 Summary of Axiomatic Comparison: V-PCM vs. NPU
+理論的公理（Axiom A1, U1/U2）に基づいた、既存の NPU との直接的な比較結果を以下に示す。
+
+![V-PCM vs NPU Benchmark](images/step4_result.png)
+*Figure 3.5.4: V-PCM（PKGF幾何流）と標準的な NPU 推論の性能比較。左図は多様体次元増大に対するスケーリング効率（Axiom A1）、右図はノイズレベル（K_fluct）に対する構造の安定性（Axiom U1/U2）を示している。幾何学的アプローチが、高次元かつ高ノイズな環境において既存の静的 AI の限界を物理的に突破していることが確認できる。*
+
+### 3.5.6 Extreme Noise Reconstruction: 極限ノイズ下における「意味ポテンシャル」の物理的抽出
+最後に、情報理論的な限界に近い極限ノイズ環境下での PKGF フロー（Axiom U3）の挙動を検証した。
+
+![Extreme Noise Input Potential](images/extreme_noise_input.png)
+*Figure 3.5.5: 実験に使用された極限ノイズ入力ポテンシャル $\Omega$。一見すると構造を持たないランダムな揺らぎに見えるが、この中に微細な「非可換な歪み」が物理的に刻まれている。*
+
+このポテンシャル $\Omega$ に対し、100 ステップの動的再構成（$\dot{K} = \eta [\Omega, K] - K/\tau$）を執行した結果、内部の並行鍵 $K$ は以下の「意味的構造」へと自律的に収束した。
+
+- **抽出された最有力構造**: **"DOG"** (Structural Matching Score: 1842.3)
+- **次点**: "LOG" (Score: 1210.1)
+
+### 3.5.7 Internal Canonical Templates: 知能内部に保持された「イデア」の可視化
+PKGF における認識とは、外部刺激の単なる分類ではなく、内部に保持された「構造の正準形（Canonical Templates）」と、外部の意味ポテンシャル $\Omega$ との間の幾何学的な共鳴・整合プロセスである。以下に、本実験で使用された 5 つの内部テンプレートを示す。
+
+![Internal Template DOG](images/template_dog.png) ![Template CAT](images/template_cat.png) ![Template LOG](images/template_log.png) ![Template BOX](images/template_box.png) ![Template DIG](images/template_dig.png)
+*Figure 3.5.6: 知能多様体 $M$ 内に事前に刻まれた正準構造（テンプレート）。知能は PKGF フロー（Axiom U3）を通じて、ノイズの海 $\Omega$ の中から、これらのいずれの構造と最も非可換な整合が取れるかを動的に探索し、自律的に意味を確定させる。*
+
+この実験結果は、知能が「きれいに整形されたデータ」を必要とするのではなく、**「物理的な揺らぎそのものから構造を汲み取る」**という PKGF の本質を象徴している。既存の NN が「画像の分類」を行うのに対し、PKGF は「物理場 $\Omega$ 和並行鍵 $K$ の非可換な相互作用」を通じて構造を自律生成していることが、この極限環境下での成功により証明された。
+
 
 ---
 

@@ -30,4 +30,13 @@ $$ K(t+dt) = \mathcal{D}(K(t)) + \eta [\Omega(t), K(t)] $$
 ![Step 3 Structural Evolution](images/step3_evolution.png)
 *Figure 3.4.2: 並行鍵 K の構造的進化。初期の無秩序な状態から、PKGF 統一方程式による散逸と構築の相克を経て、意味ポテンシャル Ω に対応した幾何学的構造が自律的に浮き彫りになる過程が観測された。*
 
+### 3.4.4 Spatio-Temporal Emergence: 並行鍵 $K$ の動的受肉プロセス（時系列スナップショット）
+幾何学的構造の生成は、単一の計算ステップで完結するものではなく、散逸（D）による冗長性の排除と、構築（C）による意味の集約が繰り返される動的なプロセスである。以下に、実験で観測された並行鍵 $K$ の時間発展のスナップショット（$t=0$ から $t=199$）を示す。
+
+![Snapshot Evolution t=0](images/snapshot_K_0.png) ![Snapshot t=50](images/snapshot_K_50.png) ![Snapshot t=100](images/snapshot_K_100.png) ![Snapshot t=150](images/snapshot_K_150.png) ![Snapshot t=199](images/snapshot_K_199.png)
+*Figure 3.4.3: 統一方程式 U3 による構造の自己組織化プロセス。$t=0$ の熱的揺らぎ状態から、$t=100$ 前後で意味ポテンシャル $\Omega$ の輪郭が浮上し、$t=199$ において決定的な幾何学的構造へと凍結（Discretization）されていく過程が視覚的に確認できる。*
+
+![Step 3 Final K State](images/step3_final_K.png)
+*Figure 3.4.4: 最終ステップにおける並行鍵 $K$ の高解像度構造。散逸作用素 $\mathcal{D}(K)$ によって不要な高周波成分（ノイズ）が削ぎ落とされ、本質的な特徴量のみが多様体上に定着している。*
+
 本ステップの成果により、PKGFは物理的な「ボケ」という情報の解体プロセスを逆手に取り、適切な「ゆらぎ」を注入することで、自律的に意味のある構造を浮き彫りにする**「生成的な知性」**としての側面を確立した。これは次章（Step 4）における、物理環境下での自律的復元（Autonomous Restoration）の理論的支柱となる。
