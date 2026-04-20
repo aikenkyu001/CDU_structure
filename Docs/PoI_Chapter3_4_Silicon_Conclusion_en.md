@@ -100,7 +100,6 @@ graph TD
     PKGF -->|Axiom D| Dissipation
     PKGF -->|Axiom U| Unification
     Unification -->|Result| GI[General Intelligence as Physical Process]
-end
 ```
 
 *Fig. 3.12 (Diagram): Summary of the Physics of Intelligence (PoI) framework.*

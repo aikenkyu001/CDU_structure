@@ -133,9 +133,9 @@ graph TD
     B --> C[Regime A: Collapse Phase]
     B --> D[Regime B: Strong Constructive Phase]
     B --> E[Regime C: Linear Phase]
-    C --> F[Negative RankJump (Pi < 1)]
-    D --> G[Explosive Structure Generation (Pi > 1)]
-    E --> H[Stable Linear Response (Pi ~ 1)]
+    C --> F["Negative RankJump (Pi < 1)"]
+    D --> G["Explosive Structure Generation (Pi > 1)"]
+    E --> H["Stable Linear Response (Pi ~ 1)"]
     B --> I[Substrate-Invariant Dynamics]
 ```
 
