@@ -1,5 +1,4 @@
 # Chapter 3.3: Extraction of Biological Intelligence (Step 2)
-**（第3章3節：生物知能の抽出：ステップ2）**
 
 ## 3.3.1 Electrophysiology of *Mimosa pudica*: A Physical Model of Plant Intelligence
 

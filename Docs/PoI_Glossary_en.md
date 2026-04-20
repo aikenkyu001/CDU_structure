@@ -12,26 +12,26 @@ This glossary provides a systematic organization of the technical terms, mathema
 An endomorphism field on the tangent bundle \(TM\) of a manifold \(M\). It is the central physical quantity representing the internal structure, logic, and interpretive rules of intelligence. Its eigenvalue spectrum, rank, and commutator structures determine the state of intelligence.
 
 ## **Semantic Potential (\(\Omega\))**
-A mapping field derived from external information, goals, or the environment. It acts as an external force that induces rotation or tension within the internal structure \(K\).
+A mapping field derived from external information, goals, or the environment. It acts as an external driving force that induces rotation or tension within the internal structure \(K\).
 
 ## **Connection (\(\nabla\))**
 A geometric structure that defines "parallel transport" between contexts. It ensures consistency as intelligence transitions between different cognitive states or situations.
 
 ## **Background Curvature (\(R\))**
-The curvature tensor associated with the connection \(\nabla\). It represents the "warping of the background world" of intelligence, including culture, experience, and prior knowledge.
+The curvature tensor associated with the connection \(\nabla\). It represents the geometric deformation of the background world of intelligence, including culture, experience, and prior knowledge.
 
 ## **Gauge Group (\(\mathcal{G}\))**
-A group representing the redundancy or degrees of freedom in internal representations. Quantities that remain invariant under adjoint transformations \(K \mapsto HKH^{-1}\) constitute the "objective intelligence structure."
+A group representing the redundancy or degrees of freedom in internal representations. Quantities that remain invariant under adjoint transformations \(K \mapsto HKH^{-1}\) constitute the objective intelligence structure.
 
 ---
 
 # **B. The CDU Cycle (Cause–Divergence–Unification)**
 
 ## **C (Cause / Constructive Phase)**
-The phase in which logical structures are formed by adapting to the external potential \(\Omega\). It is characterized by convergence toward the alignment equation \(\nabla K = [\Omega, K]\).
+The phase in which logical structures are formed by adapting to the external semantic potential \(\Omega\). It is characterized by convergence toward the alignment equation \(\nabla K = [\Omega, K]\).
 
 ## **D (Divergence / Destructive Phase)**
-The phase dominated by the dissipative operator \(\mathcal{D}(K)\), where the logical rank monotonically decreases. This phase drives abstraction by collapsing redundant or excessive structures.
+The phase dominated by the dissipative operator \(\mathcal{D}(K)\), where the logical rank monotonically decreases. This phase drives abstraction by inducing reduction of redundant or excessive structures.
 
 ## **U (Unification / Metabolic Phase)**
 The phase where construction and dissipation reach a dynamic equilibrium, and the complexified \(K\) exhibits emergent or periodic behavior. This represents intelligence as a non-equilibrium steady state.
@@ -58,7 +58,7 @@ A metabolic flow governed by the complexified field:
 \[
 K = K_{\text{core}} + i K_{\text{fluct}}
 \]
-This includes gauge breaking (Axiom U4) and dimensional jumps (Axiom U6).
+This includes gauge breaking (Axiom U4) and dimensional transitions (Axiom U6).
 
 ---
 
@@ -97,7 +97,7 @@ The effective degrees of freedom of a structure, defined via its singular value 
 \]
 A phase transition where internal degrees of freedom collapse, and a specific logical structure becomes fixed.
 
-## **Dimensional Jump (Axiom U6)**
+## **Dimensional Transition (Axiom U6)**
 \[
 d_{\text{eff}}(t_c^+) \neq d_{\text{eff}}(t_c^-)
 \]
@@ -123,20 +123,20 @@ Divergence of the background curvature \(R\).
 # **F. Topology, Indices, and Invariants**
 
 ## **Characteristic Classes**
-Invariants such as Chern classes or Pontryagin classes that represent the "invariance of the deep structure" of intelligence.
+Invariants such as Chern classes or Pontryagin classes that represent the structural invariance of the deep structure of intelligence.
 
 ## **Index of Intelligence**
-An integer-valued capacity metric based on the Atiyah-Singer index theorem, indicating the "quantization" of concepts.
+An integer-valued capacity metric based on the Atiyah-Singer index theorem, indicating the quantization of concepts.
 
 ## **Persistent Homology**
-A method using barcodes and bottleneck distances to detect dimensional jumps and structural emergence.
+A method using barcodes and bottleneck distances to detect dimensional transitions and structural emergence.
 
 ---
 
 # **G. Quantization and Category Theory**
 
 ## **Intelligence Higgs Field (\(\Phi\))**
-A scalar field representing the condensation of meaning. It is the mechanism through which concepts acquire "mass."
+A scalar field representing the condensation of meaning. It is the mechanism through which concepts acquire structural mass.
 
 ## **Structural Mass**
 The phenomenon where logical structures become fixed or resistant to change through coupling with the semantic potential.
@@ -184,10 +184,10 @@ Dynamic inference performed via a 100-step update sequence in PKGF.
 Corresponding to the coefficient \(\alpha\) in the alignment term; the force that maintains existing logic.
 
 ## **Dissipative Intensity**
-Coefficient \(\beta\); the force that decomposes structure and promotes abstraction.
+Coefficient \(\beta\); the force that induces reduction of structure and promotes abstraction.
 
 ## **Semantic Gravity**
-The attractive force of logic induced by the curvature \(F_\Omega\).
+The attractive influence of logic induced by the curvature \(F_\Omega\).
 
 ---
 
@@ -197,7 +197,7 @@ The attractive force of logic induced by the curvature \(F_\Omega\).
 The stance that intelligence is not defined by its material substrate but is a **physical phenomenon** governed by the PKGF axiomatic system.
 
 ## **Geometric Definition of Intelligence**
-Intelligence is defined as the irreversible structural reconstruction process:
+Intelligence is defined as the irreversible process of structural reorganization:
 \[
 \mathcal{I} = U \circ D \circ C
 \]

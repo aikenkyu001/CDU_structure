@@ -1,5 +1,4 @@
 # Physics of Intelligence: Substrate-Invariant Formalism and Verification of Parallel Key Geometric Flow (PKGF)
-**（知能の物理学：並行鍵幾何流の媒体不変な定式化と実証）**
 
 **Author:** Fumio Miyata  
 **Date:** April 2026 (Consolidated Final Edition)  
@@ -19,14 +18,14 @@ Key experimental findings reported herein include the identification of a specif
 ## Comprehensive Table of Contents (Outline of the Dissertation)
 
 ### **Chapter 1: Axiomatic Foundation and the C-D-U Cycle**
-* **1.1 Introduction**: Transitioning from Computational Metaphors to Physical Dynamics
+* **1.1 Introduction**: Moving beyond the Computational Paradigm
 * **1.2 Theoretical Context and Related Works**: Rigorous Comparison with the Free Energy Principle (FEP), Topological Data Analysis (TDA), and a Formal Declaration of Novelty
 * **1.3 The C-D-U Cycle**: The Universal Architecture of Intelligence (Construction, Dissipation, and Unification Phases)
 * **1.4 The PKGF Axiom System**:
     * 1.4.1 Fundamental Manifold and Field Axioms (A1–A6)
     * 1.4.2 Positive PKGF: The Theory of Structure Construction (C-Axioms)
     * 1.4.3 Inverse PKGF: The Theory of Structural Dissipation and Abstraction (D-Axioms)
-    * 1.4.4 Unified PKGF: Modeling Phase Transitions and Dimensional Rank Jumps (U-Axioms)
+    * 1.4.4 Unified PKGF: Modeling Phase Transitions and Dimensional Transitions (U-Axioms)
 
 ### **Chapter 2: Kinematics and Geometry of the Parallel Key Field**
 * **2.1 Introduction to Geometric Dynamics**: The Paradigm Shift toward a Deterministic Geometric Framework
@@ -54,7 +53,7 @@ Key experimental findings reported herein include the identification of a specif
 
 ## 1.1 Introduction: The Call for a Physical Realism in Intelligence
 
-This research formally establishes the **"Physics of Intelligence (PoI),"** an ambitious disciplinary framework designed to treat intelligence as a rigorous and measurable physical phenomenon. Moving beyond the abstract algorithms of contemporary AI, we propose the **Parallel Key Geometric Flow (PKGF)** as the fundamental mathematical language governing the birth, evolution, and decay of cognitive structures.
+This research formally establishes the **"Physics of Intelligence (PoI),"** an ambitious disciplinary framework designed to treat intelligence as a rigorous and measurable physical phenomenon. Moving beyond the abstract algorithms of contemporary AI, we propose the **Parallel Key Geometric Flow (PKGF)** as the fundamental mathematical language governing the formation, degradation, and integration of cognitive structures.
 
 ```mermaid
 graph TD
@@ -70,7 +69,7 @@ graph TD
     C -.->|The Paradigm Shift| D
 ```
 
-In the prevailing scientific narrative, intelligence has long been confined to the "computational cage"—a view where cognition is merely the efficient execution of symbolic logic or the approximation of probability distributions. However, the transition toward perspectives centered on embodiment and physical dynamics represents a critical shift in modern cognitive science (Shapiro, 2007) [Shapiro_EmbodiedCognition]; (Dodig-Crnkovic, 2024) [rethinking_cognition]. 
+In the prevailing scientific narrative, intelligence has long been confined to the limitations of computation‑based models—a view where cognition is merely the efficient execution of symbolic logic or the approximation of probability distributions. However, the transition toward perspectives centered on embodiment and physical dynamics represents a critical shift in modern cognitive science (Shapiro, 2007) [Shapiro_EmbodiedCognition]; (Dodig-Crnkovic, 2024) [rethinking_cognition]. 
 
 Physics of Intelligence is anchored in the **C (Cause) – D (Divergence) – U (Unification)** universal structure. This CDU cycle is not a mere metaphor but a sequence of physical state changes observed across all intelligent media. PKGF provides the precise geometric tools to describe how the "Parallel Key"—the internal interpretive structure of an agent—evolves as a flow on a Riemannian manifold. This chapter systematizes the axioms that form the bedrock of PoI and provides the first formal physical definitions of intelligence.
 
@@ -81,28 +80,28 @@ Physics of Intelligence is anchored in the **C (Cause) – D (Divergence) – U 
 To understand the impact of PoI, it must be situated relative to the leading models of the 21st century.
 
 ### 1.2.1 Comparison with the Free Energy Principle (FEP)
-Karl Friston’s Free Energy Principle (FEP) has revolutionized our understanding of life and mind by framing them as processes that minimize variational free energy (prediction error) (Friston et al., 2006) [A%20free%20energy%20principle%20for%20the%20brain.pdf]. PoI theory significantly extends FEP by redefining this "inference" as a geometric flow (PKGF) occurring directly on the tangent bundle of an intelligence manifold (Friston, 2019) [fep_particular_physics.pdf]. 
+Karl Friston’s Free Energy Principle (FEP) has revolutionized our understanding of life and mind by framing them as processes that minimize variational free energy (prediction error) (Friston et al., 2006) [A%20free%20energy%20principle%20for%20the%20brain.pdf]. PoI theory extends FEP by formalizing inference as a geometric flow on a manifold occurring directly on the tangent bundle of an intelligence manifold (Friston, 2019) [fep_particular_physics.pdf]. 
 
-Crucially, while FEP focuses on error minimization, PoI identifies the **necessity of structural dissipation (the D-phase)** as a first-principles requirement for intelligence to avoid stagnation and reach higher-order abstractions (Friston, 2010) [KFriston_FreeEnergy_BrainTheory.pdf]. In PoI, learning is not just a statistical update but a physical state transition governed by an action functional.
+Crucially, while FEP focuses on error minimization, PoI identifies the **indispensable role of structural dissipation (the D-phase)** as a first-principles requirement for intelligence to avoid stagnation and reach higher-order abstractions (Friston, 2010) [KFriston_FreeEnergy_BrainTheory.pdf]. In PoI, learning is not just a statistical update but a physical state transition governed by an action functional.
 
 ### 1.2.2 Beyond Static Topology: Novelty in Dynamic Persistence
-Existing methods in Topological Data Analysis (TDA) use persistent homology to map the shape of data in its static form (Boissonnat et al., 2022) [TDAChapter]; (Ballester et al., 2023) [TDASurvey]. In contrast, PKGF treats the **dynamic reconfiguration of topology** itself as a field equation. Intelligence, under the PoI framework, is not characterized by static invariants but by the dynamic process of rewriting those invariants—a phenomenon we term the "Rank Jump."
+Existing methods in Topological Data Analysis (TDA) use persistent homology to map the shape of data in its static form (Boissonnat et al., 2022) [TDAChapter]; (Ballester et al., 2023) [TDASurvey]. In contrast, PKGF treats the dynamic evolution of topology itself as a field equation. Intelligence, under the PoI framework, is not characterized by static invariants but by the dynamic process of rewriting those invariants—a phenomenon we term the "Rank Jump."
 
 ---
 
 ## 1.3 The C-D-U Cycle: The Universal Architecture of Intelligence
 
 ### 1.3.1 Defining "Structure" in a Physical Context
-In the Physics of Intelligence, "structure" is defined as the **reconstruction action on a state space** $X$ generated by a family of mapping operators $\mathcal{S} = \{ f_i : X \to X \}$. This definition moves structure from the realm of "arrangement" to the realm of "active transformation." This structure is isomorphic across all media, appearing with the same mathematical signature in electronic circuits, biological organisms, and silicon hardware.
+In the Physics of Intelligence, "structure" is defined as a process of reconstructing the system’s state space $X$ generated by a family of mapping operators $\mathcal{S} = \{ f_i : X \to X \}$. This definition moves structure from the realm of "arrangement" to the realm of "active transformation." This structure is isomorphic across all media, appearing with the same mathematical signature in electronic circuits, biological organisms, and silicon hardware.
 
 ### 1.3.2 Mathematical Formalization of the CDU Cycle
 The minimal architecture of any intelligent physical process is defined by the following three operators:
 
 *   **Axiom C (Cause / Construction Phase)**: An operator that generates initial bias or order in the state space in response to external Semantic Potential or internal goals.
-*   **Axiom D (Divergence / Dissipation Phase)**: An operator that branches, amplifies, or simplifies the state space, driving the system toward structural critical points or singularities.
+*   **Axiom D (Divergence / Dissipation Phase)**: An operator that induces branching, amplification, or reduction of the state space, driving the system toward structural critical points or singularities.
 *   **Axiom U (Unification / Metabolic Phase)**: An operator that converges disparate branched states into a new stable attractor, resulting in a reorganized and more efficient internal structure.
 
-Intelligence is the **irreversible physical reconstruction process** represented by the sequential composition of these operators: $\mathcal{I} = U \circ D \circ C$.
+Intelligence is an irreversible process of structural reorganization represented by the sequential composition of these operators: $\mathcal{I} = U \circ D \circ C$.
 
 ### 1.3.3 Substrate Invariance (The Core Claim of PoI)
 Substrate invariance—the idea that intelligence structure is independent of the underlying matter—is defined by the existence of a **structure-preserving map (isomorphism)** $\phi$ between different media.
@@ -135,7 +134,7 @@ Furthermore, the PKGF framework requires that the Parallel Keys $K_M$ and $K_{M'
 Unless otherwise stated, physical terms in this paper denote **isomorphisms in geometric and algebraic structures within PKGF dynamics** rather than literal physical masses or charges:
 
 *   **Structural Mass ($m_S$)**: This is the "logical inertia" acquired by the Parallel Key $K$ via the condensation of the Intelligence Higgs Field $\Phi$. It represents the system's resistance to having its fundamental logic overwritten by noise.
-*   **Gauge Symmetry**: This represents the inherent freedom or redundancy in internal representations. The breaking of this symmetry (Gauge Breaking) corresponds to the moment fluid thoughts are "crystallized" into specific, discrete concepts.
+*   **Gauge Symmetry**: This represents the inherent freedom or redundancy in internal representations. The breaking of this symmetry (Gauge Breaking) corresponds to the moment fluid states are "crystallized" into specific, discrete concepts.
 *   **Phase Transition**: This denotes a non-linear state change where the order parameter (Effective Dimension $d_{\text{eff}}$) undergoes a discontinuous jump, defining the moment of "learning" or "emergence."
 
 ---
@@ -151,9 +150,9 @@ The PKGF system is formally defined by the quintuple $(M, K, \nabla, \Omega, \ma
 *   **A1 (Manifold)**: The background $M$ is a finite-dimensional, smooth Riemannian manifold representing the "space of thought."
 *   **A2 (Bundle Decomposition)**: The tangent bundle $TM$ admits a direct sum decomposition into semantic sectors: $TM = \bigoplus_{\alpha \in I} E_\alpha$.
 *   **A3 (Parallel Key)**: The internal structure $K$ is a global section of the endomorphism bundle: $K \in \Gamma(\mathrm{End}(TM))$.
-*   **A4 (Gauge Group)**: The group $\mathcal{G} \subset \mathrm{Aut}(TM)$ governs the allowable internal coordinate transformations.
+*   **A4 (Gauge Group)**: The group $\mathcal{G} \subset \mathrm{Aut}(TM)$ specifies the admissible internal coordinate transformations.
 *   **A5 (Connection)**: $\nabla$ is the geometric connection on $TM$ that maintains logical consistency across conceptual shifts.
-*   **A6 (Semantic Potential)**: $\Omega$ is an automorphism field that captures the "torque" or "flow" of external information and goals.
+*   **A6 (Semantic Potential)**: $\Omega$ is an automorphism field that captures the external semantic influence.
 
 ```mermaid
 classDiagram
@@ -161,7 +160,7 @@ classDiagram
         +Manifold M (Global Field)
         +ParallelKey K (Cognitive Structure)
         +Connection Nabla (Consistency Context)
-        +Potential Omega (Information Torque)
+        +Potential Omega (Semantic Influence)
         +Gauge G (Representation Symmetry)
     }
     PKGF_System --> Nabla : Transports and Aligns K
@@ -176,12 +175,12 @@ classDiagram
 *   **C2 (Gauge Covariance)**: The laws of structural growth are invariant under local adjoint transformations.
 *   **C3 (Sector Preservation)**: Growth respects the boundaries between logical sectors; specifically, if $[K, \Pi_\alpha] = 0$, then $K(E_\alpha) \subset E_\alpha$ is maintained.
 
-### 1.4.4 Inverse PKGF: The Theory of Dissipation and Abstraction (D-Axioms)
+### 1.4.4 Inverse PKGF: The Theory of Structural Dissipation and Abstraction (D-Axioms)
 *   **D1 (Dissipative Operator)**: $\mathcal{D}(K)$ is a self-adjoint, negative-definite linear operator that governs "forgetting" and "abstraction."
 *   **D2 (Dissipative Equation)**: The decay of structure follows $\dot{K} = -\lambda\,\mathcal{D}(K)$.
 *   **D3 (Rank Monotonicity)**: Pure dissipation results in the non-increasing of logical rank: $\mathrm{rank}(K(t+dt)) \le \mathrm{rank}(K(t))$.
 *   **D4 (Entropy Increase)**: Information entropy in the structure $K$ increases monotonically during the D-phase.
-*   **D5 (Minimal Residual Structure)**: The set of structures where $\mathcal{D}(K)=0$ defines the "kernel of abstraction" which is non-empty and compact.
+*   **D5 (Minimal Residual Structure)**: The set of structures where $\mathcal{D}(K)=0$ defines the minimal residual structure preserved under dissipation which is non-empty and compact.
 
 ### 1.4.5 Unified PKGF: Modeling Intelligence as a Phase Transition (U-Axioms)
 *   **U1 (Complex Parallel Key)**: To account for fluctuation, $K$ is treated as a complex field: $K = K_{\text{core}} + i K_{\text{fluct}}$.
@@ -189,7 +188,7 @@ classDiagram
 *   **U3 (The Unified Field Equation)**: The total evolution is given by $\nabla K = [\Omega, K] - \lambda\,\mathcal{D}(K)$, representing the dynamic balance of CDU.
 *   **U4 (Spontaneous Gauge Breaking)**: Phase transitions involve the reduction of symmetry $\mathcal{G} \rightarrow \mathcal{G}_{\text{broken}}$.
 *   **U5 (Sector Emergence)**: The number of active semantic sectors $E_\alpha$ is a dynamic variable.
-*   **U6 (The Rank Jump)**: At critical points $t_c$, the effective dimension undergoes a discontinuous jump: $d_{\text{eff}}(t_c^+) \ne d_{\text{eff}}(t_c^-)$. This is the physical signature of the emergence of a new "idea" or "dimension."
+*   **U6 (The Rank Jump)**: At critical points $t_c$, the effective dimension undergoes a discontinuous jump: $d_{\text{eff}}(t_c^+) \ne d_{\text{eff}}(t_c^-)$. This is the physical signature of a dimensional transition.
 
 ---
 
@@ -223,7 +222,7 @@ This chapter has laid the axiomatic and theoretical foundation for the Physics o
 | :--- | :--- | :--- |
 | $M$ | Intelligence Manifold | The domain of cognitive activity (the "thinking space"). |
 | $K$ | Parallel Key | The fundamental automorphism field governing logic and structure. |
-| $\Omega$ | Semantic Potential | The information torque generated by external inputs or internal goals. |
+| $\Omega$ | Semantic Potential | The external semantic influence generated by external inputs or internal goals. |
 | $\nabla$ | Connection | The geometric rule ensuring consistency across shifting contexts. |
 | $\mathcal{D}(K)$ | Dissipative Operator | The operator driving rank reduction, abstraction, and forgetting. |
 | $d_{\text{eff}}$ | Effective Dimension | The order parameter of intelligence; the number of active logical dimensions. |

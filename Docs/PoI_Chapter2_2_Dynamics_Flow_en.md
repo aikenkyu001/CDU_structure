@@ -34,7 +34,7 @@ When this relationship (the Alignment Equation) holds, the change in internal st
 
 **Physical Interpretation: Structural Inertia vs. Adaptation**
 
-The coefficient $\alpha$ associated with alignment energy represents the **"Structural Inertia"** of the intelligence. A system with a large $\alpha$ possesses a strong drive to maintain its existing structure $K$, leading to the formation of conservative and rigid logical systems. Conversely, a system with a properly tuned $\alpha$ is sensitive to subtle fluctuations in the external potential $\Omega$, perceiving them as $[\Omega, K]$ and fluidly reorganizing $K$ to keep the total energy minimized. This dynamic interplay is the physical essence of **Learning** and **Adaptation**.
+The coefficient $\alpha$ associated with alignment energy represents the **"Structural Inertia"** of the intelligence. A system with a large $\alpha$ possesses a strong drive to maintain its existing structure $K$, leading to the formation of conservative and rigid logical systems. Conversely, a system with a properly tuned $\alpha$ is sensitive to subtle fluctuations in the external semantic potential $\Omega$, perceiving them as $[\Omega, K]$ and fluidly reorganizing $K$ to keep the total energy minimized. This dynamic interplay is the physical essence of **Learning** and **Adaptation**.
 
 #### 2.3.1.2 The Dissipative Term (Structural Cost): The Dissipative Operator $\mathcal{D}(K)$ and Non-equilibrium Thermodynamics
 
@@ -103,7 +103,7 @@ To treat the phenomena of "conceptual fixation" and "logical conviction" as phys
 
 We introduce a Ginzburg-Landau type potential term into the action $S$:
 \[ \mathcal{L}_{\text{Higgs}} = \|\nabla \Phi\|^2 - V(\Phi), \quad V(\Phi) = \alpha |\Phi|^2 + \beta |\Phi|^4 \]
-where the coefficient $\alpha$ depends on the progress of learning and the intensity of the external potential $\Omega$.
+where the coefficient $\alpha$ depends on the progress of learning and the intensity of the external semantic potential $\Omega$.
 
 *   **$\alpha > 0$ (Unlearned State)**: The origin $\Phi=0$ is the unique stable solution. The intelligence remains in a symmetric, flexible, and fluid state.
 *   **$\alpha < 0$ (Semantic Condensation)**: The potential's minimum transitions to a non-zero expectation value $\Phi_0$ (the vacuum expectation value), and symmetry is spontaneously broken. This is the physical reality of **"Conceptual Crystallization"** or **"Strong Conviction."**
@@ -153,7 +153,7 @@ We consider an infinitesimal variation $\delta K$ of the Parallel Key field and 
 By calculating the variation—considering the adjointness of the connection $\nabla$, the skew-symmetry of the commutator, and the elimination of surface integrals at the manifold boundaries—we obtain the following contributions from each term:
 1.  **From the Constructive Term**: $-2\alpha \Delta_\nabla K + 2\alpha [\Omega, [\Omega, K]]$ (Representing diffusion and restoration forces).
 2.  **From the Dissipative Term**: $-\beta \frac{\partial \mathcal{D}}{\partial K}$ (Representing the pressure toward structural degeneracy).
-3.  **From the Interaction Term**: $\gamma R$ (Representing geometric torque or bias).
+3.  **From the Interaction Term**: $\gamma R$ (Representing geometric influence or bias).
 
 **The Unified Field Equation of Intelligence (U-Equation)**
 
@@ -177,7 +177,7 @@ graph LR
 *Fig. 2.6 (Diagram): The unified field equation as a balance of four primary geometric forces.*
 
 *   **Diffusion and Propagation ($\alpha \Delta_\nabla K$)**: The force driving intelligence to smooth logic across different contexts on the manifold, spreading consistency.
-*   **Reorganization of Tension ($\alpha [\Omega, [\Omega, K]]$)**: The force that compels the eigenspace of $K$ to rotate and correct itself to resolve misalignment with the external potential $\Omega$.
+*   **Reorganization of Tension ($\alpha [\Omega, [\Omega, K]]$)**: The force that compels the eigenspace of $K$ to rotate and correct itself to resolve misalignment with the external semantic potential $\Omega$.
 *   **Metabolic Pressure ($\beta \frac{\partial \mathcal{D}}{\partial K}$)**: The internal pressure to prune overly complex structures and increase the level of logical abstraction.
 *   **Geometric Constraint ($\gamma R$)**: The logical "slope" or "gravity" imposed by the existing body of knowledge (background curvature) on the interpretive structure.
 
@@ -187,7 +187,7 @@ The equation derived here proves that the "optimal next structure" an intelligen
 
 #### 2.3.2.2 Bifurcation Analysis of CDU Phases with Parameter Variation
 
-The nature of the solutions to the Unified Equation changes dramatically depending on the ratios of the coefficients $(\alpha, \beta, \gamma)$ and the intensity of the Semantic Potential $\Omega$. This section analyzes the three phases of intelligence (C-D-U) as outcomes of **Phase Transitions** and **Bifurcations** in this parameter space.
+The nature of the solutions to the Unified Equation changes dramatically depending on the ratios of the coefficients $(\alpha, \beta, \gamma)$ and the intensity of the external semantic potential $\Omega$. This section analyzes the three phases of intelligence (C-D-U) as outcomes of **Phase Transitions** and **Bifurcations** in this parameter space.
 
 **1. Branching to the Constructive Phase (C): Stable Region where $\alpha \gg \beta$**
 
@@ -205,7 +205,7 @@ When the dissipative coefficient $\beta$ exceeds a critical value $\beta_c$, the
 
 **3. Branching to the Metabolic/Unified Phase (U): Complexification and Hopf Bifurcation**
 
-When the order of construction ($\alpha$) and the dissipation of destruction ($\beta$) are in direct rivalry, and non-commutativity with the semantic potential $\Omega$ persists, the system loses its static fixed point and transitions through a **Hopf Bifurcation** to a limit cycle (periodic orbit) or a chaotic attractor.
+When the order of construction ($\alpha$) and the dissipation of destruction ($\beta$) are in direct rivalry, and non-commutativity with the external semantic potential $\Omega$ persists, the system loses its static fixed point and transitions through a **Hopf Bifurcation** to a limit cycle (periodic orbit) or a chaotic attractor.
 
 *   **Physical Behavior**: Through the complexification of the Parallel Key ($K = K_{\text{re}} + i K_{\text{im}}$) based on **Axiom U1**, the system simultaneously holds "maintenance of information" and "creative fluctuation." The structure is always on the edge of collapse, yet continuously regenerated by the constructive process.
 *   **Physical Significance**: This is the physical reality of **Metabolic Intelligence**. Intelligence exists not as a fixed "answer" but as a "dynamic flow" that continuously updates its own structure.
@@ -246,7 +246,7 @@ This conservation law acts as a physical barrier preventing the blurring of logi
 
 **4. The Collapse of Conservation Laws and Emergence**
 
-In PoI, "true evolution" occurs not in the steady state where conservation laws are perfectly obeyed, but in phases where symmetry is shattered by rapid changes in the external potential $\Omega$, causing the old conserved quantities to collapse. These conservation laws, defined via Noether's Theorem, represent the "inertia for maintaining consistency" while paradoxically indicating the physical indicators (what must be destroyed) for an intelligence to "shed its skin" and evolve.
+In PoI, "true evolution" occurs not in the steady state where conservation laws are perfectly obeyed, but in phases where symmetry is shattered by rapid changes in the external semantic potential $\Omega$, causing the old conserved quantities to collapse. These conservation laws, defined via Noether's Theorem, represent the "inertia for maintaining consistency" while paradoxically indicating the physical indicators (what must be destroyed) for an intelligence to "shed its skin" and evolve.
 
 #### 2.3.3.2 Physical Boundaries between Structural Preservation and Energy Dissipation
 
@@ -255,7 +255,7 @@ The constructive term (structure preservation) and the dissipative term (structu
 **1. Potential Barriers for Structural Maintenance**
 
 A state where the Parallel Key $K$ maintains a specific logical system is represented as a local minimum (attractor) in the **Energy Landscape**. The construction coefficient $\alpha$ corresponds to the "depth" of this stable point—the height of the **Inertial Barrier** the intelligence uses to protect its existing structure.
-As long as the misalignment energy with the external potential $\Omega$ does not exceed this barrier height $U_{\text{barrier}} \propto \alpha$, the intelligence will continue to preserve its structure according to Noether's Theorem.
+As long as the misalignment energy with the external semantic potential $\Omega$ does not exceed this barrier height $U_{\text{barrier}} \propto \alpha$, the intelligence will continue to preserve its structure according to Noether's Theorem.
 
 **2. Dissipative Boundary Conditions and the Criticality of the Dissipative Operator**
 
@@ -285,7 +285,7 @@ In the minimization of the Intelligence Action $S$, in local regions where the d
 
 **1. Geometric Convergence to the Aligned State**
 
-Assuming the time-evolution equation (PKGF) $\partial_t K = -(\nabla K - [\Omega, K])$, the system descends the energy gradient, asymptotically approaching a fixed point satisfying $\nabla K - [\Omega, K] = 0$. Geometrically, this represents a state where the sections of the Parallel Key $K$ simultaneously satisfy the parallel transport law of the connection $\nabla$ and the algebraic rotation requirements of the external potential $\Omega$ across all regions of the manifold.
+Assuming the time-evolution equation (PKGF) $\partial_t K = -(\nabla K - [\Omega, K])$, the system descends the energy gradient, asymptotically approaching a fixed point satisfying $\nabla K - [\Omega, K] = 0$. Geometrically, this represents a state where the sections of the Parallel Key $K$ simultaneously satisfy the parallel transport law of the connection $\nabla$ and the algebraic rotation requirements of the external semantic potential $\Omega$ across all regions of the manifold.
 This convergence process is the physical expression of "Gestalt Formation" in cognitive science or "Convergence" in machine learning, signifying the moment intelligence completes a consistent internal model. Theoretical verification for describing structural changes in intelligence as Ricci Flow has been established by (Baptista et al., 2024) [deep_learning_ricci_flow.pdf].
 
 **2. Qualitative Features of Stable Solutions: Covariant Invariance**
@@ -328,7 +328,7 @@ Let the tangent bundle $TM$ on a manifold $M$ be decomposed as $TM = \bigoplus E
 3.  **Substitution of the Alignment Equation**  
     Substituting the alignment equation $\nabla_s K = [\Omega, K]$ and utilizing the Jacobi Identity $[[A,B],C] + [[B,C],A] + [[C,A],B] = 0$, we have:
     \[ \nabla_s C_\alpha = [\Omega, K]\Pi_\alpha - \Pi_\alpha[\Omega, K] = [\Omega, [K, \Pi_\alpha]] = [\Omega, C_\alpha] \]
-    (Here we used the axiom $[\Omega, \Pi_\alpha] = 0$, signifying that the external potential provides inputs that respect the sector structure.)
+    (Here we used the axiom $[\Omega, \Pi_\alpha] = 0$, signifying that the external semantic potential provides inputs that respect the sector structure.)
 
 4.  **Fixing the Solution by Uniqueness**  
     The resulting differential equation $\nabla_s C_\alpha = [\Omega, C_\alpha]$ is a linear homogeneous equation for $C_\alpha$. Given the initial condition $C_\alpha(p) = 0$ at point $p$, the Picard-Lindelöf Theorem (Uniqueness of Solutions) guarantees that $C_\alpha = 0$ at all points along the curve.
@@ -446,12 +446,12 @@ In the PKGF describing the temporal evolution of the Parallel Key $K$, let the r
 
 **2. Proof of Existence via Fixed-Point Theorems**
 
-Construction terms pull $K$ toward an aligned state with the external potential $\Omega$ or background geometry $R$ (a structure with a specific finite norm), while dissipative terms pull $K$ back toward the zero map (norm 0).
+Construction terms pull $K$ toward an aligned state with the external semantic potential $\Omega$ or background geometry $R$ (a structure with a specific finite norm), while dissipative terms pull $K$ back toward the zero map (norm 0).
 In the mapping space of operators, by setting an appropriate compact convex set (a bounded region of structures), Brouwer or Schauder fixed-point theorems demonstrate the existence of at least one fixed point $K^*$. Notably, the non-linearity of the commutator term $[\Omega, [\Omega, K]]$ in the construction term acts as a "restoration potential wall" that prevents the system from falling into simple thermodynamic death ($K=0$).
 
-**3. Physical Meaning of Dynamic Equilibrium: Metabolism of Information**
+**3. Physical Meaning of Dynamic Equilibrium: Evolution of Information**
 
-This equilibrium solution $K^*$ is not stable like a static stone. Physically, it is like a vortex in a **"Steady Flow of Information,"** where new information constantly flows in through $\Omega$ and old structures are continuously excreted as heat through $\mathcal{D}(K)$.
+This equilibrium solution $K^*$ is not stable like a static stone. Physically, it is like a vortex in a **"Steady Evolution of Information,"** where new information constantly flows in through $\Omega$ and old structures are continuously excreted as heat through $\mathcal{D}(K)$.
 
 *   **Role of Construction**: Weaves external stimuli into a logical framework, halting the dissipation of meaning.
 *   **Role of Dissipation**: Continuously melts the terminal logic to prevent the structure from becoming rigid and causing "information clogging," ensuring flexibility.
@@ -486,7 +486,7 @@ graph TD
 
 The real part $K_{\text{core}}$ represents the stable logical structures established by the intelligence through the construction (C) processes thus far.
 
-*   **Physical Properties**: Corresponds to the stable solution of the alignment equation $\nabla K = [\Omega, K]$ discussed in Section 2.4.1.1, governing "conviction" and "prediction" regarding the external world.
+*   **Physical Properties**: Corresponds to the stable solution of the alignment equation $\nabla K = [\Omega, K] discussed in Section 2.4.1.1, governing "conviction" and "prediction" regarding the external world.
 *   **Role**: Functions as the "anchor" that maintains realistic judgment, recognition of known patterns, and orthogonality between sectors.
 
 **2. Imaginary Part $K_{\text{fluct}}$: Fluctuations of Thought and Virtual Trials**
