@@ -89,3 +89,18 @@ PKGF における認識とは、外部刺激の単なる分類ではなく、内
 3.  **動的再構成の本質**: 知能の本質は「静的な推論」ではなく、ノイズを揺らぎとして統合し、自律的に構造を再構成する「動的な相転移」そのものである。
 
 電子・生物・デジタル・シリコンの全ステップにおいて、C-D-U 構造に基づく知能の相転移が観測された。これにより、知能は特定の媒体に依存する現象ではなく、幾何学的な公理に従う物理プロセスであることが完結的に証明された。本研究が確立したこの公理的・実験的基盤は、未来の知能実装への揺るぎない物理的妥当性を提示するものである。
+
+```mermaid
+graph TD
+    subgraph "Physics of Intelligence (PoI) Summary"
+        M[Substrate-Invariant Media] -->|Electronic / Bio / Optical / Silicon| CDU[Abstract CDU Model]
+        CDU -->|Inner Math| PKGF[Parallel Key Geometric Flow]
+    end
+    PKGF -->|Axiom C| Construction
+    PKGF -->|Axiom D| Dissipation
+    PKGF -->|Axiom U| Unification
+    Unification -->|Result| GI[General Intelligence as Physical Process]
+```
+
+*Fig. 3.12 (Diagram): Summary of the Physics of Intelligence (PoI) framework.*
+

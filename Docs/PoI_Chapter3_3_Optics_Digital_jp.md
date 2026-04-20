@@ -41,3 +41,13 @@ $$ K(t+dt) = \mathcal{D}(K(t)) + \eta [\Omega(t), K(t)] $$
 *Figure 3.4.4: 最終ステップにおける並行鍵 $K$ の高解像度構造。散逸作用素 $\mathcal{D}(K)$ によって不要な高周波成分（ノイズ）が削ぎ落とされ、本質的な特徴量のみが多様体上に定着している。*
 
 本ステップの成果により、PKGFは物理的な「ボケ」という情報の解体プロセスを逆手に取り、適切な「ゆらぎ」を注入することで、自律的に意味のある構造を浮き彫りにする**「生成的な知性」**としての側面を確立した。これは次章（Step 4）における、物理環境下での自律的復元（Autonomous Restoration）の理論的支柱となる。
+
+```mermaid
+graph TD
+    B[Physical Blur / Dissipation] -->|Destruction| I[Information Loss]
+    N[Stochastic Fluctuation] -->|Interference| G[Generative Dynamics]
+    G -->|Rank Jump| S[Emergent Structure]
+    S -->|Axiom U4| F[Autonomous Intelligence]
+```
+*Fig. 3.8 (Diagram): Generative logic of the PKGF flow extracting order from noise.*
+

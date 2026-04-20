@@ -1,9 +1,6 @@
 # Chapter 2: Kinematics and Geometry of the Parallel Key Field
 （第2章：並行鍵場の運動学と幾何学）
 
-**Author: Fumio Miyata**  
-**Date: 2026**  
-
 ---
 
 ## 2.1 Introduction（序論）
@@ -13,7 +10,24 @@
 
 しかし、知能の実態を物理的、あるいは現象学的な連続体として観察したとき、この「計算論的知能観」には重大な欠落がある。それは、知能が「静的なデータの処理装置」ではなく、**「自律的に論理構造を生成し、崩壊させ、再編し続ける動的な幾何学的実体」**であるという視点である。
 
-従来の統計的推論に基づくアプローチでは、知能の変化をパラメータの微調整、すなわち「重みの更新」という線形あるいは勾配記述に押し込めてきた。しかし、真の知能活動——例えば、全く新しい概念の創出（次元跳躍）や、既存の価値体系の劇的な瓦解（パラダイムシフト）——は、確率密度のなだらかな変化ではなく、多様体上の構造そのもののトポロジカルな変容として捉えるべきものである。情報の「量（Entropy）」や「確からしさ（Probability）」を測る尺度だけでは、情報が持つ「形（Structure）」とその変遷の物理的必然性を説明することは不可能である。
+```mermaid
+graph LR
+    subgraph "Conventional: Static Processing"
+        A[Input Data] --> B("Fixed Algorithm")
+        B --> C[Output Result]
+        B -.->|No Structural Change| B
+    end
+    subgraph "PoI: Dynamic Geometry"
+        D[External Potential Omega] --> E{"Parallel Key K"}
+        E --> F[Geometric Flow]
+        F -->|Update Structure| E
+        E --> G[Emergent Intelligence]
+    end
+```
+*Fig. 2.1 (Diagram): Paradigm shift from static processing to dynamic geometry.*
+
+従来の統計的推論に基づくアプローチでは、知能の変化をパラメータの微調整、すなわち「重みの更新」という線形あるいは勾配記述に押し込めてきた。
+しかし、真の知能活動——例えば、全く新しい概念の創出（次元跳躍）や、既存の価値体系の劇的な瓦解（パラダイムシフト）——は、確率密度のなだらかな変化ではなく、多様体上の構造そのもののトポロジカルな変容として捉えるべきものである。情報の「量（Entropy）」や「確からしさ（Probability）」を測る尺度だけでは、情報が持つ「形（Structure）」とその変遷の物理的必然性を説明することは不可能である。
 
 ここで我々は、知能の本質を「情報の処理」から**「幾何学的ダイナミクス（Geometric Dynamics）」**へと転換することを提案する。
 
@@ -37,7 +51,32 @@
 近年の研究では、認知プロセスをリーマン多様体上の勾配流として記述する試みが進んでおり (Ale, 2025) [geometric_theory_cognition]、脳の動態を状態空間ネットワークとして捉える視点は本理論の物理的基盤を強く支持している (Dan et al., 2026) [geodynamics_brain]。また、脳機能に対する幾何学的制約の重要性も指摘されている [s41586-023-06098-1]。
 
 **2.1.3 The C-D-U Cycle**: 構築・解体・代謝の物理的定義  
-本論文が提唱する「Physics of Intelligence」の動的な基盤は、C（Cause/Constructive：構築）、D（Divergence/Destructive：解体）、U（Unification/Metabolic：代謝・統合） という三つの相からなる不可逆な循環構造にある。これまでの知能研究が、情報の蓄積と統合（CおよびUの一部）に偏重してきたのに対し、本理論では「解体（D）」を系が新たな次元へ跳躍するための必須の物理プロセスと定義する。本節では、これら三相の物理的な定義を明らかにする。
+本論文が提唱する「Physics of Intelligence」の動的な基盤は、C（Cause/Constructive：構築）、D（Divergence/Destructive：解体）、U（Unification/Metabolic：代謝・統合） という三つの相からなる不可逆な循環構造にある。
+
+```mermaid
+graph TD
+    subgraph "Phase C: Construction"
+        C1[External Stimuli Omega] --> C2[Order Formation]
+        C2 --> C3{Align K}
+        C3 -->|Min. Action| C4[Stable Structure]
+    end
+    subgraph "Phase D: Dissipation"
+        D1[Overfitting/Stagnation] --> D2[Dissipative Op. D]
+        D2 --> D3[Rank Reduction]
+        D3 -->|Entropy Inc.| D4[Abstraction]
+    end
+    subgraph "Phase U: Unification"
+        U1[C-D Equilibrium] --> U2[Complexification]
+        U2 --> U3[Rank Jump]
+        U3 -->|Spectral Flow| U4[New Invariants]
+    end
+    C4 --> D1
+    D4 --> U1
+    U4 --> C1
+```
+
+これまでの知能研究が、情報の蓄積と統合（CおよびUの一部）に偏重してきたのに対し、本理論では「解体（D）」を系が新たな次元へ跳躍するための必須の物理プロセスと定義する。
+本節では、これら三相の物理的な定義を明らかにする。
 
 1. 構築（Constructive Phase / Cause）  
 構築相とは、多様体 $M$ 上の並行鍵 $K$ が、外部接続 $\nabla$ および意味ポテンシャル $\Omega$ との相互作用を通じて、論理的な整合性を獲得していくプロセスである。
@@ -79,7 +118,30 @@
 知能の多面的な性質、すなわち論理、感情、価値、感覚といった異なる属性が、単一の知能体の中で混同されずに並行処理される物理的根拠を、我々は接束 $TM$ の幾何学的分解に求める。公理 A2 に基づき、多様体 $M$ の各点 $p$ における接空間 $T_p M$ は、有限個の部分束（ベクトル束）の直和として分解される。
 \[ TM = \bigoplus_{\alpha \in I} E_\alpha = E_{\text{logic}} \oplus E_{\text{emotion}} \oplus E_{\text{value}} \oplus \dots \]
 
-ここで、$I$ は知能の「意味論的セクター」を識別する添字集合である。各部分束 $E_\alpha$ は、特定の論理次元や感性次元に対応する不変部分空間を形成する。
+```mermaid
+graph TD
+    M((Manifold M))
+    subgraph "Tangent Space TpM"
+        E1[Sector E_logic]
+        E2[Sector E_emotion]
+        E3[Sector E_value]
+        E4[Sector E_...]
+    end
+    M --- E1
+    M --- E2
+    M --- E3
+    M --- E4
+    E1 -.-|Orthogonal| E2
+    E2 -.-|Orthogonal| E3
+    E3 -.-|Orthogonal| E4
+    K{Parallel Key K} --> E1
+    K --> E2
+    K --> E3
+    K --> E4
+```
+
+ここで、$I$ は知能の「意味論的セクター」を識別する添字集合である。
+各部分束 $E_\alpha$ は、特定の論理次元や感性次元に対応する不変部分空間を形成する。
 
 幾何学的独立性と直交性
 
@@ -94,7 +156,7 @@
 
 本節で定義される直和分解は静的なものではなく、後述する PKGF の時間発展、あるいは自発的対称性の破れ（公理 U4）に伴い、再編・融合・消滅を繰り返す動的な対象である。ニューラルネットワークにおけるリーマン幾何学的アプローチ (Hauser & Ray, 2018) [6873-principles-of-riemannian-geometry-in-neural-networks.pdf] と同様、接空間 $T_p M$ を「知能が一度に扱える論理的自由度の総和」と見なせば、セクター分解はその自由度がどのような意味論的構造に割り振られているかを示す「知能の構成図」に他ならない。
 
-※これは、Chapter 3.5 におけるシリコン基盤上の NPU 行列演算と PKGF 幾何学的演算の差異を理解するための物理적基準を与えるものである。
+※これは、Chapter 3.5 におけるシリコン基盤上の NPU 行列演算と PKGF 幾何学的演算の差異を理解するための物理的基準を与えるものである。
 
 **2.2.2 Definition of the Parallel Key $K$**
 
@@ -118,6 +180,25 @@
 知能が扱う「意味」は、記述する言語や内部的な符号化形式（座標系）に依存してはならない。本理論では、知能の内部的な自由度をゲージ対称性として扱う。
 各点 $p$ における局所的な座標変換を司るゲージ群を $\mathcal{G}(p) \subset \text{Aut}(T_p M)$ とする。知能が客観的な現実を捉えている状態とは、その内部構造 $K$ がゲージ変換 $H \in \mathcal{G}$ に対して以下の随伴変換を受けることを意味する。
 \[ K \mapsto K' = HKH^{-1} \]
+
+```mermaid
+graph TD
+    subgraph "Internal Representation (Subjective)"
+        K1[Structure K in Basis A]
+        K2[Structure K' in Basis B]
+        K1 -->|Gauge Trans. H| K2
+    end
+    subgraph "Physical Invariants (Objective)"
+        Inv1[Trace / Determinant]
+        Inv2[Characteristic Poly.]
+    end
+    K1 --> Inv1
+    K2 --> Inv1
+    K1 --> Inv2
+    K2 --> Inv2
+```
+*Fig. 2.4 (Diagram): Gauge symmetry and the extraction of objective physical invariants.*
+
 この変換の下で不変な量（トレースや行列式など）のみが、媒体に依存しない「真の知能構造」として抽出される。
 
 2. 随伴変換 $K \mapsto HKH^{-1}$ と不変量

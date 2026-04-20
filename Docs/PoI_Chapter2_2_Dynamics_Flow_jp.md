@@ -95,7 +95,22 @@
 *   **$\alpha > 0$（未学習状態）**: $\Phi=0$ が唯一の安定解であり、知能は対称性を保った柔軟（流動的）な状態にある。
 *   **$\alpha < 0$（意味の凝縮）**: ポテンシャルの最小値が非ゼロの期待値 $\Phi_0$（真空期待値）へ遷移し、対称性が自発的に破れる。これが「概念の結晶化」や「強い確信」の物理的実体である。
 
+```mermaid
+graph TD
+    subgraph "Symmetry State (Unlearned)"
+        A[High Symmetry G] --> B(Zero Mass mS=0)
+        B --> C[Fluid Logic K]
+    end
+    subgraph "Broken Symmetry (Learned/Certainty)"
+        D[Subgroup G_broken] --> E(Higgs Condensation Phi0)
+        E --> F(Structural Mass mS > 0)
+        F --> G[Rigid/Stable Logic K]
+    end
+    C -->|Phase Transition| G
+```
+
 2. **相互作用項と構造的質量 ($m_S$)**
+
 
 凝縮したヒッグス場 $\Phi$ と並行鍵 $K$ の相互作用を以下のラグランジアンで定義する。
 \[ \mathcal{L}_{\text{mass}} = g |\Phi|^2 \text{Tr}(K^\dagger K) \]
@@ -136,6 +151,17 @@
 方程式の物理的解釈
 
 この方程式は、知能が定常状態において保持すべき「構造の平衡条件」を示している。
+
+```mermaid
+graph LR
+    K((Parallel Key K))
+    F1["Diffusion: Nabla K"] -->|Smoothness| K
+    F2["Tension: [Omega, K]"] -->|Adaptation| K
+    F3["Dissipation: D(K)"] -->|Abstraction| K
+    F4["Curvature: R"] -->|Bias/Context| K
+    K -->|Unified Balance| S[Stable Intelligence]
+```
+*Fig. 2.6 (Diagram): The unified field equation as a balance of four geometric forces.*
 
 *   **拡散と伝播 ($\alpha \Delta_\nabla K$)**: 知能が多様体上の異なる文脈間で論理を平滑化し、一貫性を広げようとする力。
 *   **緊張の再編 ($\alpha [\Omega, [\Omega, K]]$)**: 外部ポテンシャル $\Omega$ との不整合を解消するために、$K$ の固有空間を強制的に回転・修正する力。
@@ -337,6 +363,23 @@ $K$ を特異値スペクトル $\{\sigma_1, \sigma_2, \dots, \sigma_n\}$ に分
 
 並行鍵 $K$ が散逸ダイナミクス $\dot{K} = -\lambda \mathcal{D}(K)$ に従い、あるいは過剰な外部緊張 $[\Omega, K]$ に晒されるとき、系は連続的な変容では対応不可能な臨界点に達する。本節では、この瞬間に発生する**幾何学的特異点（Geometric Singularity）**を分類し、それが知能の「抽象化」と「再編」において果たす役割を定義する。
 
+```mermaid
+mindmap
+    root((Geometric Singularities))
+        Rank Singularity
+            Concept Collapse
+            Abstraction
+            Potential Space
+        Bifurcation Singularity
+            Decision Paradox
+            Symmetry Breaking
+            Conflict Resolution
+        Curvature Singularity
+            Paradigm Shift
+            Logical Breakdown
+            Topology Update
+```
+
 1. **ランク特異点（Rank Singularity）と次元の収縮**
 
 最も頻繁に観測されるのは、並行鍵 $K$ の線形写像としての階数が局所的、あるいは大域的に低下する現象である。
@@ -365,7 +408,7 @@ $K$ を特異値スペクトル $\{\sigma_1, \sigma_2, \dots, \sigma_n\}$ に分
 
 ### 2.4.3 Effective Dimension
 
-知能の構造적複雑さを評価する秩序変数として、特異値分解（SVD）に基づき**有効次元（Effective Dimension） $d_{\text{eff}}$** を定義する。
+知能の構造的複雑さを評価する秩序変数として、特異値分解（SVD）に基づき**有効次元（Effective Dimension） $d_{\text{eff}}$** を定義する。
 \[ d_{\text{eff}}(K) = \exp \left( -\sum p_i \ln p_i \right), \quad p_i = \frac{s_i^2}{\sum s_j^2} \]
 ここで $s_i$ は並行鍵 $K$ の特異値である。知能が新たな概念を獲得する際、あるいは既存の枠組みを破壊して再編する際、この $d_{\text{eff}}$ は非連続な変化、すなわち**ランク跳躍（Rank Jump）**を示す。離散リッチフローにおけるランドマークの幾何学的性質の研究は、このランク跳躍の数学的必然性を補強している (Hehl et al., 2025) [discrete_ricci_flow_landmark]。
 
@@ -403,6 +446,22 @@ $K$ を特異値スペクトル $\{\sigma_1, \sigma_2, \dots, \sigma_n\}$ に分
 2.4.4.2 複素並行鍵 $K = K_{\text{core}} + i K_{\text{fluct}}$ による創造性の定式化
 
 知能が単なる最適化マシンに留まらず、未知の概念を創出する「創造性」を発揮する際、並行鍵 $K$ は実数空間から複素数空間への拡張を要請される。公理 U1 に基づき、複素並行鍵を $K = K_{\text{core}} + i K_{\text{fluct}}$ と分解し、その物理的役割を定義する。
+
+```mermaid
+graph TD
+    subgraph "Complex Parallel Key K"
+        direction LR
+        Re[Real Part: K_core]
+        Im[Imaginary Part: i*K_fluct]
+    end
+    Re -->|Maintenance| S[Stable Prediction]
+    Im -->|Perturbation| T[Virtual Trials]
+    Re ---|Interference| Im
+    Im -.->|Projection| New[New Concept/Insight]
+    S --> Decision
+    New --> Decision[Unified Decision]
+```
+*Fig. 2.8 (Diagram): Creativity as interference between real (stable) and imaginary (fluctuating) logic components.*
 
 1. **実数部 $K_{\text{core}}$：既知の論理と構造的基盤**
 

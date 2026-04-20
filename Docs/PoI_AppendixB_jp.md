@@ -27,6 +27,18 @@ PKGF の統一方程式 $\nabla K = [\Omega, K] - \lambda \mathcal{D}(K)$ にお
 ## B2.1 Blow-up 写像の定義
 特異点 $p \in M$ に対し、固有空間の方向情報を保持したまま点 $p$ を超平面で置き換える写像 $\pi : \widetilde{M} \to M$ を構成する。並行鍵 $K$ の引き戻し $\widetilde{K} = \pi^* K$ を考えることで、元の多様体上で不連続であったランクの変化を、高次元多様体 $\widetilde{M}$ 上の滑らかな「流れ」として記述できる。
 
+```mermaid
+graph LR
+    subgraph "Singular Space M"
+        P((p))
+    end
+    subgraph "Regularized Space M_tilde"
+        E["Exceptional Divisor (Smooth Flow of K)"]
+    end
+    P -->|Blow-up Map pi| E
+```
+*Fig. B.1 (Diagram): Regularization of singularities via the blow-up map.*
+
 
 
 ---
@@ -47,6 +59,14 @@ $$\text{SF}(K_t) = \text{rank}(K_{\text{post}}) - \text{rank}(K_{\text{pre}})$$
 1. **構築相 (C)** において固有値が正の方向へ駆動される。
 2. 特定の臨界点 $t_c$ で $\lambda_k(t_c) = 0$ となり、ランク特異点を通過する。
 3. $t > t_c$ で $\text{rank}(K)$ が増加し、有効次元 $d_{\text{eff}}$ の不連続な跳躍（創造的発火）が生じる。
+
+```mermaid
+graph TD
+    T1[t < tc: Stable Rank] -->|C Phase Driving| T2[t = tc: Rank Singularity]
+    T2 -->|Eigenvalue crosses 0| T3[t > tc: Dimensional Emergence]
+    T3 -->|Spectral Flow| RJ[!! RANK JUMP !!]
+```
+*Fig. B.2 (Diagram): Process of rank jump and dimensional emergence driven by spectral flow.*
 
 ---
 

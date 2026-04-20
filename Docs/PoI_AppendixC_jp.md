@@ -34,7 +34,21 @@ $$i \hbar_I \frac{\partial \widehat{K}}{\partial t} = [\widehat{\Omega}, \wideha
 
 # C3. 非可換幾何学と概念のスペクトル
 
-アラン・コンヌの非可換幾何学の枠組みを用い、知能多様体を「スペクトル三つ組 $(\mathcal{A}, \mathcal{H}, D)$」として再定義する (Connes, 1994) [book94bigpdf]。非可換幾何を用いた計算モデルの構築は、知能の新たな形式化として注目されている (Lau & Jeffreys, 2025) [noncommutative_nn_bu]。
+アラン・コンヌの非可換幾何学の枠組みを用い、知能多様体を「スペクトル三つ組 $(\mathcal{A}, \mathcal{H}, D)$」として再定義する (Connes, 1994) [book94bigpdf]。
+
+```mermaid
+graph TD
+    subgraph "Spectral Triple (A, H, D)"
+        A[Algebra A: Logic/Culture]
+        H[Hilbert Space H: States]
+        D[Dirac Op D: Background Context]
+    end
+    D -->|Eigenvalue Spectrum| S[Discrete Concepts]
+    K[Parallel Key K] -->|Action| S
+```
+*Fig. C.1 (Diagram): Redefining the intelligence manifold as a spectral triple in noncommutative geometry.*
+
+非可換幾何を用いた計算モデルの構築は、知能の新たな形式化として注目されている (Lau & Jeffreys, 2025) [noncommutative_nn_bu]。
 
 ## C3.1 ディラック作用素 $D$ と並行鍵
 知能の背景構造（言語、論理、文化）をディラック作用素 $D$ に埋め込み、並行鍵 $K$ をそのスペクトル（固有値分布）の変化として捉える。非可換幾何における Dirac 作用素の現代的導入については Barrett (2023) [bonus6594] を、ニューラルオペレーターへの応用については Santos & Sales (2025) [hyperbolic_modular_operators] を参照されたい。

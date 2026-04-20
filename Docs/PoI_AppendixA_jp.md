@@ -30,7 +30,16 @@ TM @>K>> TM
 \end{CD}
 $$
 
-すなわち、$T(f) \circ K = K \circ T(f)$。この性質は、知能の内部構造が座標系や記述言語の選択（ゲージ）に依存せず、多様体の幾何学的な不変量であることを保証する。
+```mermaid
+graph TD
+    TM1[TM] -- "K" --> TM1_K[TM]
+    TM1 -- "T(f)" --> TM2[TM]
+    TM1_K -- "T(f)" --> TM2_K[TM]
+    TM2 -- "K" --> TM2_K
+```
+
+すなわち、$T(f) \circ K = K \circ T(f)$。
+この性質は、知能の内部構造が座標系や記述言語の選択（ゲージ）に依存せず、多様体の幾何学的な不変量であることを保証する。
 
 ---
 
@@ -41,6 +50,20 @@ $$
 ## A2.1 部分束分解の存在条件
 多様体 $M$ 上の接束は、インデックス集合 $I$ によって以下のように直交分解される。
 $$TM = \bigoplus_{\alpha \in I} E_\alpha$$
+
+```mermaid
+graph TD
+    TM[Tangent Bundle TM]
+    TM --> E1[Sector E1]
+    TM --> E2[Sector E2]
+    TM --> E3[Sector E3]
+    E1 -.-|Metric g=0| E2
+    E2 -.-|Metric g=0| E3
+    K{K} --> E1
+    K --> E2
+    K --> E3
+```
+
 ここで、各セクター $E_\alpha$ が知能の独立した機能単位として機能するためには、以下の条件が要請される。
 
 1.  **局所可積分性（フロベニウスの定理）**:
@@ -59,6 +82,16 @@ $$TM = \bigoplus_{\alpha \in I} E_\alpha$$
 ## A3.1 非可換性テンソル $\Theta$ の導入
 並行鍵 $K$ と意味ポテンシャル $\Omega$ の不整合（摩擦）を測定するために、以下の**非可換性テンソル**を定義する。
 $$\Theta(X) = [\Omega, K](X)$$
+
+```mermaid
+graph LR
+    P[Potential Omega] -->|Tension| K{Key K}
+    C[Connection Nabla] -->|Transport| K
+    P -.->|Non-zero Commutator| T[Tensor Theta]
+    T -->|Drives| E[Evolution: PKGF]
+```
+*Fig. A.3 (Diagram): Relationship between connection, potential, and the evolution-driving tensor Theta.*
+
 このテンソル $\Theta$ が非ゼロであることは、知能の内部論理 $K$ が外部要請 $\Omega$ と矛盾していることを示し、構築方程式 $\nabla K = [\Omega, K]$ を通じて $K$ の進化（学習）を駆動するポテンシャルとなる。
 
 ---
@@ -70,4 +103,19 @@ $$\Theta(X) = [\Omega, K](X)$$
 ## A4.1 階層的射の連鎖
 知能の構造 $K$ は、0-cell（状態）間の射（1-morphism）であり、そのゲージ変換 $H$ は射の間の射（2-morphism）である。
 $$K_0 \xrightarrow{H_1} K_1 \xrightarrow{H_2} K_2 \dots$$
-この連鎖は高次圏における $\infty$-群全（$\infty$-groupoid）を形成し、知能が過去の全思考プロセスをトポロジカルに保持していることを示唆する。Chapter 2.5 で述べた 16 セクター相互作用は、この高次圏における特定のホモトピー型に対応する。このような高次ゲージ理論による心の圏論的定式化は、現代の数理心理学においても重要なトピックとなっている (Patrascu, 2025) [latest]。
+
+```mermaid
+graph LR
+    S1((State 0)) -- "K0 (1-m)" --> S2((State 1))
+    S2 -- "K1 (1-m)" --> S3((State 2))
+    K0 -- "H1 (2-m)" --> K1
+    K1 -- "H2 (2-m)" --> K2
+    subgraph "High-Order Chain"
+        K0
+        K1
+        K2
+    end
+```
+
+この連鎖は高次圏における $\infty$-群全（$\infty$-groupoid）を形成し、知能が過去の全思考プロセスをトポロジカルに保持していることを示唆する。
+Chapter 2.5 で述べた 16 セクター相互作用は、この高次圏における特定のホモトピー型に対応する。このような高次ゲージ理論による心の圏論的定式化は、現代の数理心理学においても重要なトピックとなっている (Patrascu, 2025) [latest]。
