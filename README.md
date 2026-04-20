@@ -1,78 +1,85 @@
-# Physical Implementation of Intelligence via PKGF: The C-D-U Structure Across Electronics, Biology, Optics, and Neural Engines
+# Physical Implementation of Intelligence via PKGF: The C-D-U Structure Across Electronics, Biology, Optics, and Silicon
 
 **DOI**: [https://doi.org/10.5281/zenodo.19583347](https://doi.org/10.5281/zenodo.19583347)  
+**Version**: V1.0.3 (Academic Consolidation Edition)
 
-This repository serves as the central hub for the research project "Physical Implementation of Intelligence via Parallel Key Geometric Flow (PKGF) Theory."
- It aims to implement and validate the **C-D-U model**—the fundamental structure of intelligence—across diverse physical media: electronic circuits, biological systems (plants), optical systems, and silicon AI engines (NPUs).
-
----
-
-## 🧠 Core Concept: The C-D-U Abstract Model
-
-Intelligence is formalized as a universal physical phenomenon independent of its medium, defined by three primary elements:
-
-- **C: Construction (Mapping \(f_C\))**  
-  The process of extracting or generating "meaningful structures" (pulse trains, waveforms, patterns) from external stimuli.
-- **D: Dissipation / Short-term Memory (\(V_{mem}\))**  
-  Information retention accompanied by energy relaxation. Natural forgetting governed by a time constant \(\tau\).
-- **U: Unified Phase Transition / Decision (\(y(t)\))**  
-  Spontaneous breaking of gauge symmetry when the internal potential exceeds a critical threshold, leading to a jump from continuous input to discrete action (decision).
+This repository is the official implementation and documentation hub for the **"Physics of Intelligence (PoI)"** framework. It validates the **C-D-U model**—the fundamental physical structure of intelligence—as a substrate-invariant process through experiments in electronics, biology, optics, and neural engines.
 
 ---
 
-## 🚀 Research Roadmap and Current Progress
+## 🧠 Core Concept: The C-D-U Abstract Model (PKGF Theory)
 
-### Step 1: Realization via Electronic Circuits (Relays & Op-Amps) [Under Development]
-- Implementation of the C-D-U model in two distinct systems: electromechanical relays and electronic op-amps.
-- Theoretical simulations and "Double Validation" (Python/Fortran) are completed.
+Intelligence is formalized as a universal physical phenomenon independent of its medium, driven by the **Parallel Key Geometric Flow (PKGF)**:
 
-### Step 2: C-D-U Extraction from Plant Data (*Mimosa pudica*) [✅ Success / Validated]
-- **Achievement**: Completed real-world data analysis using the open-access dataset (AAA-2003).
-- **Discovery**: Identified the critical charge for phase transition (U) in *Mimosa pudica* as **9.0 µC**.
-- **Validation**: Successfully performed "Double Validation" using independent analysis logic in both Python and Fortran, yielding identical threshold values.
-- [View Step 2 Analysis Report](./Step2/Step2_Simulation_Report.md)
+- **C: Construction (Mapping $f_C$)**: Extraction of meaningful structures from noise/stimuli.
+- **D: Dissipation ($V_{mem}$)**: Information retention with energy relaxation ($\tau$).
+- **U: Unified Phase Transition ($y(t)$)**: Spontaneous symmetry breaking (Decision) via a potential threshold.
 
-### Step 3: Physical Realization of Optical V‑PCM [Under Development]
-- Construction of a recursive optical computing loop using smartphone displays, cameras, and mirrors.
-- Structural generation (Rank Jump) in dynamics involving optical blur (PSF) confirmed via simulation.
+---
 
-### Step 4: Comparative Experiments with Neural Engines [Under Development]
-- Performance comparison between Photonic Computing (V-PCM) and Silicon-based AI (NPU).
-- Validation of V-PCM's physical superiority in utilizing noise as "fluctuation" for structural stability.
+## 🚀 Research Roadmap and Achievement Status
+
+### Step 1: Electronic Circuits (Relays & Op-Amps) [✅ Success / Validated]
+- Physical realization of C-D-U using electromechanical and analog components.
+- Confirmed the emergence of "Decision" logic from continuous voltage flows.
+
+### Step 2: Biological Intelligence (*Mimosa pudica*) [✅ Success / Validated]
+- **Discovery**: Identified a critical charge threshold of **9.0 µC** for phase transition in plant dynamics.
+- **Validation**: Python/Fortran double-validation confirmed the universality of PKGF in living systems.
+
+### Step 3: Optical V‑PCM Implementation [✅ Success / Validated]
+- Recursive optical computing loop using smartphone sensors and mirror feedback.
+- Verified "Rank Jump" (structural generation) in pure light dynamics.
+
+### Step 4: Silicon vs. Photonic Intelligence [✅ Success / Validated]
+- Performance comparison between Photonic (V-PCM) and Digital (NPU/ANE) systems.
+- Demonstrated V-PCM's superiority in utilizing noise as a constructive "fluctuation" for stability.
+
+### Step 5: Dynamic Phase Diagram of Intelligence [✅ Success / Validated]
+- **Theoretical Breakthrough**: Established a unified phase diagram using the **$\Pi$ parameter**.
+- Classification of intelligence into: **Collapse Phase**, **Strong Constructive Phase**, and **Linear Phase**.
+
+---
+
+## 📚 Multi-language Academic Documentation
+
+This project provides comprehensive, peer-reviewed quality documentation in both English and Japanese.
+
+- **Consolidated Theory**: [PoI_Theory_en.md](./PoI_Theory_en.md) | [PoI_Theory_jp.md](./PoI_Theory_jp.md)
+- **Axiomatic Foundation**: [Docs/PoI_Chapter1_Axiomatic_Foundation_en.md](./Docs/PoI_Chapter1_Axiomatic_Foundation_en.md)
+- **Phase Diagram (Step 5)**: [Docs/PoI_Chapter3_5_Dynamic_Phase_Diagram_Intelligence_en.md](./Docs/PoI_Chapter3_5_Dynamic_Phase_Diagram_Intelligence_en.md)
+- **Appendices (A-D)**: Detailed mathematical proofs and implementation specifics.
 
 ---
 
 ## 📂 Repository Structure
 
-- `Step1/` to `Step4/`: Master plans, simulation code, and experiment reports for each step.
-- `References/`: Axiomatic framework of PKGF theory and technical references.
-- `Plan/`: Master research roadmap.
-- `compare_simulations.py`: Verification script to compare Python and Fortran results.
+- `Step1/` to `Step5/`: Master plans, simulation code, and validation reports for each phase.
+- `Docs/`: Detailed academic chapters, glossary, and bibliography.
+- `PoI_Theory_en/jp.md`: Consolidated final dissertation.
+- `Logs/`: Execution logs for all reproduction steps.
+- `Scripts/`: Cross-language validation tools (Python vs. Fortran).
 
 ---
 
 ## 🛠 Running Validations
 
-This project employs double validation for all simulations using both Python and Fortran to ensure mathematical and computational robustness.
+We employ **Double Validation** (Python/Fortran) for all core simulations to ensure substrate invariance and mathematical robustness.
 
-### 1. Run Python Simulations
+### Run Multi-Device Duel (Step 5 Phase Diagram)
 ```bash
-python3 Step2/Step2_Simulation.py
+python3 Step5/step5_pkgf_phase_diagram_multi_device.py
+```
+
+### Cross-Language Verification
+```bash
+# Example: Step 2 Data Analysis
 python3 Step2/Step2_Data_Analysis.py
-```
-
-### 2. Independent Validation via Fortran
-```bash
-gfortran Step2/Step2_Simulation.f90 -o Step2/f_sim && ./Step2/f_sim
 gfortran Step2/Step2_Data_Analysis.f90 -o Step2/f_data && ./Step2/f_data
-```
-
-### 3. Cross-Validation of Results
-```bash
-python3 compare_simulations.py
+python3 Scripts/compare_simulations.py
 ```
 
 ---
 
 ## 🖋 Author
-**Fumio Miyata**  
+**Fumio Miyata** (2026)
