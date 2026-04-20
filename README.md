@@ -1,6 +1,6 @@
 # Physical Implementation of Intelligence via PKGF: The C-D-U Structure Across Electronics, Biology, Optics, and Silicon
 
-**DOI**: [https://doi.org/10.5281/zenodo.19583347](https://doi.org/10.5281/zenodo.19583347)  
+**DOI**: [https://doi.org/10.5281/zenodo.19659376](https://doi.org/10.5281/zenodo.19659376)  
 **Version**: V1.0.3 (Academic Consolidation Edition)
 
 This repository is the official implementation and documentation hub for the **"Physics of Intelligence (PoI)"** framework. It validates the **C-D-U model**—the fundamental physical structure of intelligence—as a substrate-invariant process through experiments in electronics, biology, optics, and neural engines.
