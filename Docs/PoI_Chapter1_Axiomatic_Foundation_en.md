@@ -62,7 +62,7 @@ graph TD
         B --> C[Symbolic Processing]
     end
     subgraph "Physics of Intelligence (PoI): Dynamics"
-        D[Geometric Potential] --> E[PKGF Flow]
+        D[Semantic Potential] --> E[PKGF Flow]
         E --> F[C-D-U Cycle]
         F --> G[Emergent Intelligence]
     end
